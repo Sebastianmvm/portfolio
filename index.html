@@ -216,20 +216,20 @@ familiar y laboral me permite mantener un enfoque claro y constante hacia el log
     <secttion class="contact" id="contact">
         <h2 class="heading">Contácta<span>me</span></h2>
 
-        <form action="#">
+        <form action="contact.php" method="POST">
 
             <div class="input-group">
                 <div class="input-box">
-                    <input type="text" placeholder="Nombre Completo">
-                    <input type="email" placeholder="Correo">
+                    <input type="text" name="nombre" placeholder="Nombre Completo">
+                    <input type="email" name="correo"  placeholder="Correo">
                 </div>
                 <div class="input-box">
-                    <input type="number" placeholder="Número de teléfono">
-                    <input type="text" placeholder="Asunto">
+                    <input type="number" name="telefono"  placeholder="Número de teléfono">
+                    <input type="text" name="asunto" placeholder="Asunto">
                 </div>
             </div>
             <div class="input-group-2">
-                <textarea name="" id="" placeholder="Escríbe tu mensaje aquí..." cols="30" rows="10"></textarea>
+                <textarea name="mensaje" id="" placeholder="Escríbe tu mensaje aquí..." cols="30" rows="10"></textarea>
                 <input type="submit" value="Envíar Mensaje" class="btn">
             </div>
         </form>

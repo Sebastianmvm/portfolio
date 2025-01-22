@@ -113,7 +113,7 @@ section {
     text-align: right;
 }
 .home-content h1 {
-    font-size: 8rem;
+    font-size: 5rem;
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
@@ -223,7 +223,7 @@ section {
 }
 
 .about-content h2 {
-    font-size: 7rem;
+    font-size: 4rem;
     text-align: left;
 }
 
@@ -268,32 +268,32 @@ section {
 
 .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tres columnas fijas */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas fijas */
     align-items: center;
-    gap: 2.5rem; /* Espaciado entre tarjetas */
-    /*justify-content: center; /* Centra las tarjetas */
-    /*padding: 0 5%; /* Margen interno para mantener bordes */
+    gap: 2rem; /* Espaciado entre tarjetas */
+    justify-content: center; /* Centrar las tarjetas */
+    padding: 0 5%; /* Margen interno para mantener bordes */
 }
 
 .service-box {
     display: flex;
-    /*flex-direction: column;*/
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--main-color);
-    height: 600px;
-    /*width: 100%;  Ajusta para adaptarse al tamaño de la columna */
-    border-radius: 3rem;
+    height: 400px; /* Reducimos la altura */
+    width: 100%; /* Ajusta para adaptarse al tamaño de la columna */
+    border-radius: 2rem; /* Ajustamos el radio */
     cursor: pointer;
-    border: 5px solid transparent;
+    border: 3px solid transparent;
     transition: 0.4s ease-in-out;
-    /*text-align: center;*/
+    text-align: center; /* Centrar texto */
 }
 
 .service-box:hover {
     background: var(--second-bg-color);
     color: var(--main-color);
-    border: 5px solid var(--main-color);
+    border: 3px solid var(--main-color);
     transform: scale(1.03);
 }
 
@@ -303,25 +303,26 @@ section {
     text-align: center;
     justify-content: center;
     align-items: center;
-    padding: 5rem;
+    padding: 2rem; /* Ajustamos el padding interno */
 }
 
 .service-info h4 {
-    font-size: 4rem;
-    margin: 2rem 0;
-    font-weight: 800;
+    font-size: 3rem; /* Reducimos el tamaño de fuente */
+    margin: 1.5rem 0;
+    font-weight: 700;
 }
 
 .service-info p {
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.7;
+    font-size: 1.2rem; /* Reducimos el tamaño de fuente */
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 .service-info i {
-    font-size: 8rem;
-    /*margin-bottom: 1rem;*/
+    font-size: 6rem; /* Reducimos el tamaño del ícono */
+    margin-bottom: 1rem;
 }
+
 
 .projects{
     background-color: var(--second-bg-color);
