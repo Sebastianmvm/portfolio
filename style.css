@@ -74,12 +74,12 @@ span {
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease-in-out;
-    border-bottom: 3px solid transparent; /* Invisible por defecto */
+    border-bottom: 3px solid transparent;
 }
 
 .navbar a:hover {
     color: var(--main-color);
-    border-bottom: 3px solid var(--main-color); /* Subrayado visible en hover */
+    border-bottom: 3px solid var(--main-color);
 }
 
 /* Botón Gradiente */
@@ -94,6 +94,7 @@ span {
     border: none;
     transition: 0.3s ease-in-out;
 }
+
 section {
     min-height: 100vh;
     padding: 10rem 15%;
@@ -112,6 +113,7 @@ section {
     align-items: flex-end;
     text-align: right;
 }
+
 .home-content h1 {
     font-size: 5rem;
     font-weight: 700;
@@ -123,6 +125,7 @@ section {
     margin: 1rem 0;
     font-size: 4rem;
 }
+
 .home-content p {
     font-size: 1.5rem;
     font-weight: 500;
@@ -137,11 +140,9 @@ section {
 }
 
 .home-img img:hover {
-    box-shadow: 
-        0 0 25px var(--main-color),
-        0 0 50px var(--main-color),
-        0 0 100px var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color), 0 0 100px var(--main-color);
 }
+
 .social-icons a {
     display: inline-flex;
     justify-content: center;
@@ -183,9 +184,7 @@ section {
 
 .btn:hover {
     transform: scale(1.05);
-    box-shadow: 
-        0 0 25px var(--main-color),
-        0 0 50px var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
 }
 
 .btn-group a:nth-of-type(2) {
@@ -200,6 +199,7 @@ section {
     background-color: var(--main-color);
     color: black;
 }
+
 .about {
     display: flex;
     justify-content: center;
@@ -216,10 +216,7 @@ section {
 }
 
 .about-img img:hover {
-    box-shadow: 
-        0 0 25px var(--main-color),
-        0 0 50px var(--main-color),
-        0 0 100px var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color), 0 0 100px var(--main-color);
 }
 
 .about-content h2 {
@@ -247,6 +244,7 @@ section {
 ::-webkit-scrollbar-track {
     background-color: var(--bg-color);
 }
+
 .heading {
     text-align: center;
     font-size: 7rem;
@@ -256,23 +254,19 @@ section {
 .services {
     background-color: var(--bg-color);
     color: black;
-    /*padding: 5rem 10%;*/
 }
 
 .services h2 {
     color: var(--text-color);
-    /*text-align: center
-    font-size: 5rem;
-    margin-bottom: 3rem;*/
 }
 
 .services-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas fijas */
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    gap: 2rem; /* Espaciado entre tarjetas */
-    justify-content: center; /* Centrar las tarjetas */
-    padding: 0 5%; /* Margen interno para mantener bordes */
+    gap: 2rem;
+    justify-content: center;
+    padding: 0 5%;
 }
 
 .service-box {
@@ -281,13 +275,13 @@ section {
     justify-content: center;
     align-items: center;
     background-color: var(--main-color);
-    height: 400px; /* Reducimos la altura */
-    width: 100%; /* Ajusta para adaptarse al tamaño de la columna */
-    border-radius: 2rem; /* Ajustamos el radio */
+    height: 400px;
+    width: 100%;
+    border-radius: 2rem;
     cursor: pointer;
     border: 3px solid transparent;
     transition: 0.4s ease-in-out;
-    text-align: center; /* Centrar texto */
+    text-align: center;
 }
 
 .service-box:hover {
@@ -303,27 +297,27 @@ section {
     text-align: center;
     justify-content: center;
     align-items: center;
-    padding: 2rem; /* Ajustamos el padding interno */
+    padding: 2rem;
 }
 
 .service-info h4 {
-    font-size: 3rem; /* Reducimos el tamaño de fuente */
+    font-size: 3rem;
     margin: 1.5rem 0;
     font-weight: 700;
 }
 
 .service-info p {
-    font-size: 1.2rem; /* Reducimos el tamaño de fuente */
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.5;
 }
 
 .service-info i {
-    font-size: 6rem; /* Reducimos el tamaño del ícono */
+    font-size: 6rem;
     margin-bottom: 1rem;
 }
 
-.projects{
+.projects {
     background-color: var(--second-bg-color);
 }
 
@@ -351,9 +345,9 @@ section {
     box-shadow: 0 0 5px var(--main-color);
     transition: 0.3s ease;
 }
+
 .project-card:hover {
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
     transform: scale(1.02);
 }
 
@@ -370,6 +364,7 @@ section {
 .project-card p {
     font-size: 1.6rem;
 }
+
 .contact {
     background-color: var(--bg-color);
 }
@@ -414,7 +409,8 @@ section {
     text-align: center;
     font-size: 1.8rem;
 }
-.footer ul li{
+
+.footer ul li {
     display: inline-block;
     margin-left: 20px;
 }
@@ -435,73 +431,6 @@ section {
     font-size: 16px;
 }
 
-@media (max-width: 1285px) {
-    #menu-icon {
-      display: block;
-    }
-  
-    .navbar {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      width: 50%;
-      padding: 1rem 3rem;
-      background: rgba(0, 0, 0, 0.8);
-      border-bottom-left-radius: 2rem;
-      border-left: 2px solid var(--main-color);
-      border-bottom: 2px solid var(--main-color);
-      display: none;
-    }
-  
-    .navbar a {
-      display: block;
-      font-size: 2rem;
-      margin: 3rem 0;
-      color: var(--text-color);
-    }
-  
-    .navbar.active {
-      display: block;
-    }
-  
-    .gradient-btn {
-      display: none;
-    }
-  
-    .home {
-      flex-direction: column-reverse;
-      margin: 5rem 0;
-      gap: 5rem;
-    }
-  
-    .home-content {
-      align-items: center;
-      text-align: center;
-    }
-  
-    .home-img img {
-      width: 56vw;
-    }
-  
-    .about {
-      flex-direction: column-reverse;
-      text-align: center;
-    }
-  
-    .about h2 {
-      text-align: center;
-      margin: 2rem 0;
-    }
-  
-    .about img {
-      width: 52vw;
-    }
-  
-    .contact form {
-      flex-direction: column;
-    }
-  };
-
 /* Estilos para la sección de Habilidades */
 .habilidades {
     background-color: var(--bg-color);
@@ -513,7 +442,7 @@ section {
     font-size: 7rem;
     margin-bottom: 5rem;
     color: var(--text-color);
-    letter-spacing: 2px; /* Espaciado entre letras */
+    letter-spacing: 2px;
 }
 
 .habilidades-lista {
@@ -528,21 +457,20 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: var(--bg-color); /* Fondo oscuro */
-    border: 2px solid var(--main-color); /* Borde naranja */
-    border-radius: 3rem; /* Bordes redondeados */
-    padding: 5rem 2rem; /* Espaciado interno */
+    background-color: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 3rem;
+    padding: 5rem 2rem;
     overflow: hidden;
     cursor: text;
-    box-shadow: 0 0 10px var(--main-color); /* Sombra suave por defecto */
-    transition: all 0.3s ease-in-out; /* Transición suave para todos los efectos */
+    box-shadow: 0 0 10px var(--main-color);
+    transition: all 0.3s ease-in-out;
 }
 
 .habilidad-item:hover {
-    box-shadow: 0 0 25px var(--main-color), /* Sombra más intensa */
-                0 0 50px var(--main-color); /* Sombra aún más intensa */
-    transform: scale(1.02); /* Efecto de escala */
-    border-color: var(--main-color); /* Asegurar que el borde sea naranja */
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+    transform: scale(1.02);
+    border-color: var(--main-color);
 }
 
 .habilidad-item i {
@@ -553,90 +481,87 @@ section {
 
 .habilidad-info h4 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem; /* Más espacio debajo del título */
+    margin-bottom: 1.5rem;
     color: var(--text-color);
-    letter-spacing: 1px; /* Espaciado entre letras */
+    letter-spacing: 1px;
 }
 
 .habilidad-detalles {
-    list-style-type: disc; /* Puntos de lista */
-    padding-left: 2rem; /* Espaciado para la lista */
+    list-style-type: disc;
+    padding-left: 2rem;
 }
 
 .habilidad-detalles li {
     font-size: 1.6rem;
     color: var(--text-color);
-    line-height: 1.8; /* Más espacio entre líneas */
-    margin-bottom: 1rem; /* Más espacio entre elementos de la lista */
-    letter-spacing: 0.5px; /* Espaciado entre letras */
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
 }
-
 
 /* Estilos para el enlace dentro de la tarjeta de servicios */
 .service-link {
-    text-decoration: none; /* Quita el subrayado del enlace */
-    color: inherit; /* Hereda el color del texto */
-    display: block; /* Hace que el enlace ocupe todo el espacio de la tarjeta */
-    height: 100%; /* Asegura que el enlace cubra toda la altura de la tarjeta */
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
 }
 
 .service-link:hover {
-    text-decoration: none; /* Asegura que no haya subrayado al pasar el mouse */
+    text-decoration: none;
 }
 
 /* Estilos para el Carrusel */
-
 .carrusel-container {
     position: relative;
-    max-width: 1000px; /* Ajusta el ancho del contenedor */
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px; /* Espaciado interno */
-    overflow: hidden; /* Oculta los elementos que no están activos */
-    border: none; /* Asegurarnos de que no haya bordes en el contenedor */
+    padding: 20px;
+    overflow: hidden;
+    border: none;
 }
 
 .carrusel {
     display: flex;
-    gap: 18px; /* Aumenta el espacio entre las tarjetas */
-    transition: transform 0.5s ease-in-out; /* Transición suave */
+    gap: 18px;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carrusel-item {
-    flex: 0 0 100%; /* Cada tarjeta ocupa el 100% del ancho del contenedor */
+    flex: 0 0 100%;
     box-sizing: border-box;
-    padding: 0rem; /* Espaciado interno */
-    background-color: var(--bg-color); /* Fondo oscuro */
-    border-radius: 2rem; /* Bordes redondeados */
-    box-shadow: inset 0 0 10px var(--main-color), 0 0 15px var(--main-color); /* Sombra más suave */
-    transition: all 0.3s ease-in-out; /* Transición suave */
-    text-align: center; /* Centrar el texto */
-    margin: 0; /* Eliminar cualquier margen adicional */
-    border: none; /* Eliminar cualquier borde exterior */
+    padding: 0rem;
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+    box-shadow: inset 0 0 10px var(--main-color), 0 0 15px var(--main-color);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    margin: 0;
+    border: none;
     cursor: text;
 }
 
-/* Eliminar el borde exterior del último elemento */
 .carrusel-item:last-child {
-    border-right: none; /* Elimina el borde derecho del último elemento */
+    border-right: none;
 }
 
 .carrusel-item:hover {
-    box-shadow: inset 0 0 15px var(--main-color), 0 0 25px var(--main-color); /* Sombra más intensa al pasar el mouse */
+    box-shadow: inset 0 0 15px var(--main-color), 0 0 25px var(--main-color);
 }
 
 .carrusel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-    color: var(--main-color); /* Color de las flechas */
-    border: none; /* Asegurarnos de que no haya bordes en los botones */
-    padding: 1rem; /* Reducir el padding de los botones */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--main-color);
+    border: none;
+    padding: 1rem;
     cursor: pointer;
-    font-size: 2rem; /* Reducir el tamaño de la fuente */
+    font-size: 2rem;
     z-index: 10;
     border-radius: 50%;
-    width: 40px; /* Reducir el tamaño de los botones */
+    width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -645,46 +570,25 @@ section {
 }
 
 .carrusel-btn.anterior {
-    left: 10px; /* Posición del botón anterior */
+    left: 10px;
 }
 
 .carrusel-btn.siguiente {
-    right: 10px; /* Posición del botón siguiente */
+    right: 10px;
 }
 
 .carrusel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el mouse */
-    transform: translateY(-50%) scale(1.1); /* Efecto de escala al pasar el mouse */
-}
-
-
-
-/* Estilos para las listas dentro de la sección de Habilidades */
-.habilidad-detalles {
-    list-style-type: disc; /* Puntos de lista */
-    padding-left: 2rem; /* Espaciado para la lista */
-}
-
-.habilidad-detalles li {
-    font-size: 1.8rem; /* Tamaño de fuente más grande */
-    color: var(--text-color); /* Color del texto (blanco o el definido en --text-color) */
-    line-height: 1.8; /* Espaciado entre líneas */
-    margin-bottom: 1rem; /* Espaciado entre elementos de la lista */
-}
-
-.habilidad-detalles li::marker {
-    color: var(--main-color); /* Color naranja para los puntos de la lista */
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
 }
 
 /* Botón en sección de habilidades */
-/* Estilos para el contenedor del botón */
 .btn-container {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    margin-top: 2rem; /* Ajusta el margen superior según sea necesario */
+    justify-content: center;
+    margin-top: 2rem;
 }
 
-/* Estilos para el botón */
 .btn-container .btn {
     display: inline-block;
     padding: 1rem 3rem;
@@ -701,12 +605,8 @@ section {
 
 .btn-container .btn:hover {
     transform: scale(1.05);
-    box-shadow: 
-        0 0 25px var(--main-color),
-        0 0 50px var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
 }
-
-
 
 /* Estilos para la sección de Proyectos */
 .proyecto {
@@ -763,4 +663,72 @@ section {
     max-width: 100%;
     border-radius: 0.5rem;
     margin-top: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 1285px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3rem;
+        background: rgba(0, 0, 0, 0.8);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: var(--text-color);
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .gradient-btn {
+        display: none;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        margin: 5rem 0;
+        gap: 5rem;
+    }
+
+    .home-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-img img {
+        width: 56vw;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about h2 {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .about img {
+        width: 52vw;
+    }
+
+    .contact form {
+        flex-direction: column;
+    }
 }
