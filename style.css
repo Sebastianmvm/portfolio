@@ -323,7 +323,6 @@ section {
     margin-bottom: 1rem;
 }
 
-
 .projects{
     background-color: var(--second-bg-color);
 }
@@ -501,5 +500,267 @@ section {
     .contact form {
       flex-direction: column;
     }
-  }
-  
+  };
+
+/* Estilos para la sección de Habilidades */
+.habilidades {
+    background-color: var(--bg-color);
+    padding: 10rem 15%;
+    text-align: center;
+}
+
+.habilidades .heading {
+    font-size: 7rem;
+    margin-bottom: 5rem;
+    color: var(--text-color);
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+.habilidades-lista {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.habilidad-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--bg-color); /* Fondo oscuro */
+    border: 2px solid var(--main-color); /* Borde naranja */
+    border-radius: 3rem; /* Bordes redondeados */
+    padding: 5rem 2rem; /* Espaciado interno */
+    overflow: hidden;
+    cursor: text;
+    box-shadow: 0 0 10px var(--main-color); /* Sombra suave por defecto */
+    transition: all 0.3s ease-in-out; /* Transición suave para todos los efectos */
+}
+
+.habilidad-item:hover {
+    box-shadow: 0 0 25px var(--main-color), /* Sombra más intensa */
+                0 0 50px var(--main-color); /* Sombra aún más intensa */
+    transform: scale(1.02); /* Efecto de escala */
+    border-color: var(--main-color); /* Asegurar que el borde sea naranja */
+}
+
+.habilidad-item i {
+    font-size: 4rem;
+    margin-right: 2rem;
+    color: var(--main-color);
+}
+
+.habilidad-info h4 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem; /* Más espacio debajo del título */
+    color: var(--text-color);
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.habilidad-detalles {
+    list-style-type: disc; /* Puntos de lista */
+    padding-left: 2rem; /* Espaciado para la lista */
+}
+
+.habilidad-detalles li {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.8; /* Más espacio entre líneas */
+    margin-bottom: 1rem; /* Más espacio entre elementos de la lista */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+}
+
+
+/* Estilos para el enlace dentro de la tarjeta de servicios */
+.service-link {
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto */
+    display: block; /* Hace que el enlace ocupe todo el espacio de la tarjeta */
+    height: 100%; /* Asegura que el enlace cubra toda la altura de la tarjeta */
+}
+
+.service-link:hover {
+    text-decoration: none; /* Asegura que no haya subrayado al pasar el mouse */
+}
+
+/* Estilos para el Carrusel */
+
+.carrusel-container {
+    position: relative;
+    max-width: 1000px; /* Ajusta el ancho del contenedor */
+    margin: 0 auto;
+    padding: 20px; /* Espaciado interno */
+    overflow: hidden; /* Oculta los elementos que no están activos */
+    border: none; /* Asegurarnos de que no haya bordes en el contenedor */
+}
+
+.carrusel {
+    display: flex;
+    gap: 18px; /* Aumenta el espacio entre las tarjetas */
+    transition: transform 0.5s ease-in-out; /* Transición suave */
+}
+
+.carrusel-item {
+    flex: 0 0 100%; /* Cada tarjeta ocupa el 100% del ancho del contenedor */
+    box-sizing: border-box;
+    padding: 0rem; /* Espaciado interno */
+    background-color: var(--bg-color); /* Fondo oscuro */
+    border-radius: 2rem; /* Bordes redondeados */
+    box-shadow: inset 0 0 10px var(--main-color), 0 0 15px var(--main-color); /* Sombra más suave */
+    transition: all 0.3s ease-in-out; /* Transición suave */
+    text-align: center; /* Centrar el texto */
+    margin: 0; /* Eliminar cualquier margen adicional */
+    border: none; /* Eliminar cualquier borde exterior */
+    cursor: text;
+}
+
+/* Eliminar el borde exterior del último elemento */
+.carrusel-item:last-child {
+    border-right: none; /* Elimina el borde derecho del último elemento */
+}
+
+.carrusel-item:hover {
+    box-shadow: inset 0 0 15px var(--main-color), 0 0 25px var(--main-color); /* Sombra más intensa al pasar el mouse */
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    color: var(--main-color); /* Color de las flechas */
+    border: none; /* Asegurarnos de que no haya bordes en los botones */
+    padding: 1rem; /* Reducir el padding de los botones */
+    cursor: pointer;
+    font-size: 2rem; /* Reducir el tamaño de la fuente */
+    z-index: 10;
+    border-radius: 50%;
+    width: 40px; /* Reducir el tamaño de los botones */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.carrusel-btn.anterior {
+    left: 10px; /* Posición del botón anterior */
+}
+
+.carrusel-btn.siguiente {
+    right: 10px; /* Posición del botón siguiente */
+}
+
+.carrusel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el mouse */
+    transform: translateY(-50%) scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+
+
+/* Estilos para las listas dentro de la sección de Habilidades */
+.habilidad-detalles {
+    list-style-type: disc; /* Puntos de lista */
+    padding-left: 2rem; /* Espaciado para la lista */
+}
+
+.habilidad-detalles li {
+    font-size: 1.8rem; /* Tamaño de fuente más grande */
+    color: var(--text-color); /* Color del texto (blanco o el definido en --text-color) */
+    line-height: 1.8; /* Espaciado entre líneas */
+    margin-bottom: 1rem; /* Espaciado entre elementos de la lista */
+}
+
+.habilidad-detalles li::marker {
+    color: var(--main-color); /* Color naranja para los puntos de la lista */
+}
+
+/* Botón en sección de habilidades */
+/* Estilos para el contenedor del botón */
+.btn-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 2rem; /* Ajusta el margen superior según sea necesario */
+}
+
+/* Estilos para el botón */
+.btn-container .btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 3rem;
+    font-size: 1.8rem;
+    color: black;
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-container .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 25px var(--main-color),
+        0 0 50px var(--main-color);
+}
+
+
+
+/* Estilos para la sección de Proyectos */
+.proyecto {
+    padding: 10rem 15%;
+    background: var(--second-bg-color);
+    margin-top: 6rem;
+}
+
+.proyecto h2 {
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+}
+
+.proyecto h3 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-top: 2rem;
+}
+
+.proyecto ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-top: 1rem;
+}
+
+.proyecto ul li {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.proyecto p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+.proyecto pre {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.proyecto code {
+    font-family: "Courier New", monospace;
+    color: #d4d4d4;
+}
+
+.proyecto img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
