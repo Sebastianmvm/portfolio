@@ -23,15 +23,16 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    padding-top: 3rem; /* Esto también contribuye al espacio */
 }
 
-/* Header */
+/* Estilos para el header */
 .header {
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
-    padding: 4rem 15%;
+    width: 100%;
+    padding: 0.5rem 15%; /* Reducido el padding vertical */
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     display: flex;
@@ -341,7 +342,7 @@ section {
     gap: 2rem;
     padding: 5rem 2rem;
     overflow: hidden;
-    cursor: pointer;
+    cursor: default;
     box-shadow: 0 0 5px var(--main-color);
     transition: 0.3s ease;
 }
@@ -608,11 +609,24 @@ section {
     box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
 }
 
-/* Estilos para la sección de Proyectos */
+
+/* Estilos para la sección de Proyecto */
 .proyecto {
-    padding: 10rem 15%;
+    padding: 5rem 15%; /* Reducido el padding vertical */
     background: var(--second-bg-color);
-    margin-top: 6rem;
+    margin-top: 2rem; /* Reducido el margen superior */
+    position: relative;
+    z-index: 1;
+}
+/* Estilos para el título de la sección de Proyecto */
+.proyecto h2.heading {
+    font-size: 4rem;
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 0.25rem; /* Reducido el margen inferior */
+    font-weight: 700;
+    position: relative;
+    z-index: 1001;
 }
 
 .proyecto h2 {
@@ -664,6 +678,9 @@ section {
     border-radius: 0.5rem;
     margin-top: 1rem;
 }
+
+
+
 
 /* Media Queries */
 @media (max-width: 1285px) {
@@ -731,4 +748,493 @@ section {
     .contact form {
         flex-direction: column;
     }
+}
+
+/* Estilos para la sección de objetivos */
+.objetivos {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    margin: 0.5rem auto; /* Reducido el margen superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 1200px;
+}
+.objetivos h3 {
+    font-size: 2.5rem;
+    color: #ea580c; /* Color naranja para el título */
+    margin-bottom: 2rem; /* Más espacio debajo del título */
+    text-align: center;
+}
+
+.objetivos h4 {
+    font-size: 1.6rem;
+}
+
+/* Estilos para la lista de objetivos */
+.objetivos-lista {
+    list-style-type: decimal; /* Números para los elementos principales */
+    padding-left: 2.5rem; /* Más padding para la lista */
+    font-size: 1.6rem; /* Tamaño de fuente para los títulos numerados */
+    color: #ffffff; /* Color blanco para el texto */
+    font-weight: 600; /* Texto en negrita */
+    line-height: 1.6; /* Mayor interlineado para mejor legibilidad */
+}
+
+/* Estilos para los elementos principales de la lista */
+.objetivos-lista > li {
+    margin-bottom: 1.5rem; /* Espacio entre cada objetivo principal */
+}
+
+/* Estilos para las sublistas (listas dentro de los <li>) */
+.objetivos-lista ul {
+    list-style-type: disc; /* Viñetas para los subelementos */
+    padding-left: 2.5rem; /* Más padding para las sublistas */
+    margin-top: 0.8rem; /* Espacio entre el título y la sublista */
+    font-size: 1.6rem; /* Tamaño de fuente más pequeño para los subelementos */
+    color: #cccccc; /* Color gris claro para los subelementos */
+    font-weight: 400; /* Texto normal */
+    line-height: 1.5; /* Interlineado para los subelementos */
+}
+
+/* Estilos para los elementos de las sublistas */
+.objetivos-lista ul li {
+    margin-bottom: 0.8rem; /* Espacio entre cada subelemento */
+}
+
+/* Estilos para la sección de tecnologías */
+.tecnologias {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    margin: 0.5rem auto; /* Reducido el margen superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Estilos para el título */
+.tecnologias h3 {
+    font-size: 2.5rem;
+    color: #ea580c; /* Color naranja para el título */
+    margin-bottom: 2rem; /* Más espacio debajo del título */
+    text-align: center;
+}
+
+/* Estilos para la sección de Tecnologías y Herramientas */
+
+.tecnologias {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro semi-transparente */
+    padding: 2.5rem; /* Padding interno */
+    border-radius: 1rem; /* Bordes redondeados */
+    margin: 2rem auto; /* Centrado y margen superior e inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 90%; /* Ancho relativo */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+/* Estilos para el título */
+.tecnologias h3 {
+    font-size: 2.5rem;
+    color: #ea580c; /* Color naranja para el título */
+    margin-bottom: 2rem; /* Más espacio debajo del título */
+    text-align: center;
+}
+
+/* Estilos para la lista de tecnologías */
+.tecnologias-lista {
+    list-style-type: disc; /* Viñetas para los elementos */
+    padding-left: 2.5rem; /* Más padding para la lista */
+    font-size: 1.8rem; /* Tamaño de fuente para los elementos */
+    color: #ffffff; /* Color blanco para el texto */
+    font-weight: 400; /* Texto normal */
+    line-height: 1.6; /* Mayor interlineado para mejor legibilidad */
+}
+
+/* Estilos para los elementos de la lista */
+.tecnologias-lista li {
+    margin-bottom: 1rem; /* Espacio entre cada elemento */
+}
+
+/* Resaltado de herramientas */
+.tecnologias-lista li strong {
+    color: #ea580c; /* Color naranja para resaltar las herramientas */
+    font-weight: 600; /* Texto en negrita */
+}
+
+/* Estilos para los subtítulos (h4) */
+.tecnologias h4 {
+    font-size: 2rem; /* Tamaño adecuado para que sea más destacado */
+    color: #e8fd03; /* Color naranja como en los títulos principales */
+    font-weight: bold; /* Resalta el subtítulo */
+    margin-top: 2rem; /* Espaciado superior */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    text-align: left; /* Alineación consistente con el texto */
+}
+
+
+/* Estilos para la sección de Proyecto */
+.proyecto {
+    background-color: var(--second-bg-color); /* Fondo oscuro */
+    padding: 2.5rem; /* Padding interno */
+    border-radius: 1rem;
+    margin: 2rem auto; /* Centrado y margen superior e inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Ancho relativo */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+/* Estilos para el título de Tecnologías y Herramientas */
+.tecnologias h3 {
+    font-size: 2.5rem;
+    color: var(--main-color); /* Color naranja para el título */
+    margin-bottom: 2rem; /* Espacio debajo del título */
+    text-align: center;
+}
+
+/* Estilos para la lista de Tecnologías y Herramientas */
+.tecnologias-lista {
+    list-style-type: disc; /* Viñetas para los elementos */
+    padding-left: 2.5rem; /* Padding interno para la lista */
+    font-size: 1.8rem; /* Tamaño de fuente */
+    color: var(--text-color); /* Color blanco para el texto */
+    font-weight: 400; /* Texto normal */
+    line-height: 1.6; /* Interlineado para mejor legibilidad */
+}
+
+/* Estilos para los elementos de la lista */
+.tecnologias-lista li {
+    margin-bottom: 1rem; /* Espacio entre cada elemento */
+}
+
+/* Resaltado de herramientas */
+.tecnologias-lista li strong {
+    color: var(--main-color); /* Color naranja para resaltar las herramientas */
+    font-weight: 600; /* Texto en negrita */
+}
+
+/* Estilos para el proceso */
+.proceso {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    padding: 2.5rem; /* Padding interno */
+    border-radius: 1rem; /* Bordes redondeados */
+    margin: 2rem auto; /* Centrado y margen superior e inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 90%; /* Ancho relativo */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+.proceso h3 {
+    font-size: 2.5rem;
+    color: #ea580c; /* Color naranja para el título */
+    margin-bottom: 2rem; /* Espacio debajo del título */
+    text-align: center;
+}
+.paso {
+    margin-bottom: 2rem;
+}
+
+.paso img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.paso h4 {
+    font-size: 2rem;
+    color: #ea580c; /* Color naranja para los títulos */
+    margin-bottom: 1rem;
+}
+
+.paso p {
+    font-size: 1.6rem;
+    color: #cccccc; /* Color gris claro para el texto */
+}
+
+/* Contenedor para la imagen y el texto */
+.contenido-paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contenido-paso img {
+    max-width: 80%; /* La imagen ocupa el 50% del contenedor */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    height: auto;
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+    margin-top: 10px; /* Espacio entre el texto y la imagen */
+
+}
+
+.contenido-paso p {
+    font-size: 1.6rem;
+    color: #cccccc; /* Color gris claro para el texto */
+    line-height: 1.6; /* Interlineado para mejor legibilidad */
+    text-align:left
+}
+
+/* Estilos para el dashboard final */
+.dashboard-final img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para las fórmulas DAX */
+.formulas-dax {
+    margin: 2rem 0;
+}
+
+.formula {
+    margin-bottom: 2rem;
+}
+
+.formula h4 {
+    color: #ea580c; /* Color naranja para los títulos */
+    margin-bottom: 1rem;
+}
+
+.formula pre {
+    background-color: #1e1e1e; /* Fondo oscuro para el código */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+}
+
+.formula code {
+    font-family: "Courier New", monospace;
+    color: #d4d4d4; /* Color claro para el código */
+}
+
+/* Contenedor del carrusel */
+.carrusel-container {
+    position: relative;
+    max-width: 800px; /* Ancho máximo del carrusel */
+    margin: 0 auto; /* Centrar el carrusel en la página */
+    padding: 20px; /* Espacio interno */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+/* Carrusel (contenedor de las imágenes) */
+.carrusel {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Transición suave */
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+}
+
+/* Cada ítem del carrusel */
+.carrusel-item {
+    flex: 0 0 100%; /* Cada ítem ocupa el 100% del ancho del contenedor */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
+    padding: 0; /* Sin padding interno */
+    margin: 0; /* Sin margen */
+    background-color: var(--bg-color); /* Fondo oscuro */
+    border-radius: 2rem; /* Bordes redondeados */
+    text-align: center; /* Centrar el contenido */
+    transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Imágenes dentro del carrusel */
+.carrusel-item img {
+    width: 100%; /* Ocupa el 100% del ancho del ítem */
+    max-width: 100%; /* Evita que la imagen se desborde */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Texto debajo de las imágenes */
+.carrusel-item p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-top: 1rem;
+}
+
+/* Botones de navegación */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    color: var(--main-color); /* Color naranja */
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 10;
+    border-radius: 50%; /* Botones redondos */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.carrusel-btn.anterior {
+    left: 10px; /* Posición del botón "anterior" */
+}
+
+.carrusel-btn.siguiente {
+    right: 10px; /* Posición del botón "siguiente" */
+}
+
+.carrusel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el mouse */
+    transform: translateY(-50%) scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+/* Contenedor principal */
+.tabs-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Botones de las pestañas */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los botones */
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--main-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.tab-btn.active {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.tab-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Contenido de las pestañas */
+.tab-content {
+    position: relative;
+}
+
+.tab-item {
+    display: none; /* Oculta todas las pestañas por defecto */
+    text-align: center;
+}
+
+.tab-item.active {
+    display: block; /* Muestra solo la pestaña activa */
+}
+
+.tab-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tab-item p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-top: 1rem;
+}
+
+/* Contenedor del grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Estilos para la sección de imágenes */
+.seccion-imagenes {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro semi-transparente */
+    padding: 2.5rem; /* Padding interno */
+    border-radius: 1rem; /* Bordes redondeados */
+    margin: 2rem auto; /* Centrado y margen superior e inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 90%; /* Ancho relativo */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+/* Título de la sección */
+.panel-titulo {
+    font-size: 2.5rem;
+    color: var(--main-color); /* Color naranja */
+    margin-bottom: 1rem; /* Reducido el margen inferior */
+}
+
+/* Estilos para el párrafo debajo del título */
+.seccion-imagenes p {
+    font-size: 1.6rem;
+    color: #cccccc; /* Color gris claro */
+    margin-bottom: 2rem; /* Espacio entre el párrafo y los botones */
+    line-height: 1.6;
+}
+
+/* Contenedor de la imagen actual */
+.imagen-actual {
+    margin-bottom: 2rem; /* Espacio entre la imagen y los botones */
+}
+
+/* Estilos para la imagen mostrada */
+.imagen-actual img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la descripción de la imagen */
+.imagen-actual p {
+    font-size: 1.6rem;
+    color: #cccccc; /* Color gris claro */
+    margin-top: 1rem; /* Espacio entre la imagen y la descripción */
+}
+
+/* Contenedor de los botones */
+.botones-paneles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 2rem; /* Espacio entre los botones y la imagen */
+}
+
+/* Estilos para los botones */
+.boton-panel {
+    background-color: var(--main-color); /* Color naranja */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Efecto hover para los botones */
+.boton-panel:hover {
+    background-color: #ff4500; /* Color naranja más oscuro */
+}
+
+/* Estilos para el título de la sección */
+.panel-titulo {
+    font-size: 2.5rem !important;
+    color: var(--main-color) !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+    font-weight: 700 !important;
 }

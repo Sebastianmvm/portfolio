@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización de Flota - Primera Milla</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <a href="index.html" class="logo">Sebastián<span> Vargas</span></a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#about">Acerca de mí</a>
+            <a href="index.html#services">Servicios</a>
+            <a href="index.html#projects">Proyectos</a>
+            <a href="index.html#contact">Contáctame</a>
+        </nav>
+        <button class="gradient-btn">Contáctame</button>
+    </header>
+
+        <!-- Sección del Proyecto -->
+        <section class="proyecto">
+            <h2 class="heading">Proyecto 1</h2>
+
+        <!-- Objetivos del Proyecto -->
+    <div class="objetivos">
+        <h3>🎯 Objetivos del Proyecto</h3>
+        <div class="objetivo">
+            <h4>1️⃣ Análisis de Solicitudes</h4>
+            <p>Medir la cantidad y tipo de solicitudes ("Occasional" vs. "Regular").</p>
+        </div>
+
+        <div class="objetivo">
+            <h4>2️⃣ Análisis de Comportamiento</h4>
+            <p>Identificar tendencias de crecimiento o caída en solicitudes.</p>
+            <p>Analizar patrones de clientes según tipo de negocio.</p>
+        </div>
+
+        <div class="objetivo">
+            <h4>3️⃣ Advertencias y Pérdidas</h4>
+            <p>Calcular pérdidas por visitas sin carga ("No Cargo").</p>
+            <p>Implementar mejoras en procesos de verificación.</p>
+        </div>
+
+        <div class="objetivo">
+            <h4>4️⃣ Optimización del Servicio</h4>
+            <p>Coordinar con el área comercial para mitigar incidencias.</p>
+            <p>Crear reportes detallados sobre visitas fallidas.</p>
+        </div>
+
+        <div class="objetivo">
+            <h4>5️⃣ Eficiencia en Transporte</h4>
+            <p>Implementar KPIs: niveles de servicio, factor de carga, georreferencia y cumplimiento de horarios.</p>
+        </div>
+    </div>
+
+
+        <!-- Tecnologías y Herramientas -->
+        <div class="tecnologias">
+            <h3>Tecnología y Herramientas</h3>
+            <ul class="tecnologias-lista">
+                <li><strong>Excel</strong>: Para revisión y análisis de la consistencia de los datos y uso como orígenes de datos.</li>
+                <li><strong>Power Query</strong>: Para la limpieza, transformación de datos.</li>
+                <li><strong>Power BI</strong>: Para la creación de dashboards interactivos y visualización de datos.</li>
+                <li><strong>Figma</strong>: Para el diseño profesional y corporativo, utilizare Figma para los diseños de los reportes</li>
+            </ul>
+        </div>
+
+        <!-- Proceso de Creación del Dashboard -->
+        <div class="proceso">
+            <h3>Proceso de Creación del Dashboard</h3>
+            
+            <!-- Paso 1 -->
+            <div class="paso">
+                <h4>Paso 1: Importación de Datos</h4>
+                <div class="contenido-paso">
+                    
+                    <p>Importé 4 archivos Excel 'GlobalTransit_Metrics' en formato .xlsx con los datos a trabajar. 
+                        Los 4 archivos, al estar bien estructurados y coincidir en sus columnas, con PowerQuery procedí a
+                         unificarlos para trabajar como si fuese un solo archivo o una fuente de datos única.</p>
+                         <br>
+                         <br>
+                    <img src="IMG PROYECTO 1/01_carga_db.png" alt="Importación de datos en Power BI">
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="paso">
+                <h4>Paso 2: Limpieza y Transformación de Datos</h4>
+                <div class="contenido-paso">
+                
+                    <p>En PowerQuery, fui a la opción 'Transformar' > 'Columna de texto' > 'Dividir columna' > 'Por: de dígito 
+                        a no dígito' para separar el último dígito del identificador.</p>
+                        <br>
+                        <br>
+                    <img src="IMG PROYECTO 1/02.1_Dividimos la columna.png" alt="Limpieza de datos en Power BI">
+                </div>
+            </div>
+
+            <!-- Paso 2.1 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>Unimos las 2 columnas yendo a 'Transformar' > 'Columna de texto' > 'Combinar Columnas' y elegimos el separador '-'.</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/03. Unimos las 2 columnas.png" alt="Relaciones entre tablas en Power BI">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.2 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>Eliminamos una columna vacía que no aporta valor.</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/04. Eliminamos columna vacía.png" alt="Visualizaciones en Power BI">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.3 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>Creé una nueva columna personalizada de direcciones.</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/05. Crear columna.png" alt="Visualizaciones en Power BI">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.4 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>Fui a la opción 'Agregar columna' > 'Columna personalizada' y creé la columna que llamaremos 'Address'.</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/06. Columna Personalizada.png" alt="Visualizaciones en Power BI">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.5 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>Aquí cambié el formato 'Fecha / Hora' a las columnas que venían con este formato, con el fin de tener los datos estandarizados según su campo o columna antes de cargarlos en Power BI.</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/07. Transformamos columnas de hora y fecha.png" alt="Visualizaciones en Power BI">
+                    
+                </div>
+            </div>
+        </div>    
+
+        <!-- Tabla Calendario, Medidas y Fórmulas DAX -->
+        <div class="tecnologias">
+            <h3>Tabla Calendario, Medidas y Fórmulas DAX</h3>
+            
+            <!-- Creación de la Tabla Calendario -->
+            <div class="paso">
+                <h4>1. Creación de la Tabla Calendario</h4>
+                <p>Para facilitar el análisis temporal, creé una tabla de calendario (<code>T_Calendar</code>) que contiene fechas iterativas basadas en el rango de fechas de la tabla <code>db_Request</code>. Luego, agregué columnas adicionales para desglosar la fecha en componentes útiles como día, mes, año, semestre y semana.</p>
+                <pre><code class="language-dax">
+T_Calendar = CALENDAR(
+    MIN(db_Request[Scheduling_Date]),
+    MAX(db_Request[Scheduling_Date])
+)
+                </code></pre>
+
+                <h5>Columnas adicionales:</h5>
+                <pre><code class="language-dax">
+Day = DAY(T_Calendar[Date])
+Day Name = FORMAT(T_Calendar[Date], "dddd")
+Month = MONTH(T_Calendar[Date])
+Month Name = FORMAT(T_Calendar[Date], "mmmm")
+Semester = IF(MONTH([Date]) <= 6, 1, 2)
+Week = WEEKNUM(T_Calendar[Date])
+Year = YEAR(T_Calendar[Date])
+                </code></pre>
+            </div>
+
+            <!-- Creación de Medidas para db_Request -->
+            <div class="paso">
+                <h4>2. Creación de Medidas para <code>db_Request</code></h4>
+                <p>Creé una tabla de medidas (<code>T_Metrics db_request</code>) para calcular métricas clave relacionadas con las solicitudes. Estas métricas incluyen conteos de solicitudes por estado, comparaciones con el año anterior y cálculos de excepciones operativas.</p>
+                <pre><code class="language-dax">
+Total Request Count = COUNT(db_Request[Request_ID])
+
+State Ready = COUNTROWS(
+    FILTER(db_Request, 
+        db_Request[State] = "Ready")
+)
+
+State Arrived = COUNTROWS(
+    FILTER(db_Request, 
+        db_Request[State] = "Arrived")
+)
+
+State Assigned = COUNTROWS(
+    FILTER(db_Request, 
+        db_Request[State] = "Assigned")
+)
+
+State Progress = COUNTROWS(
+    FILTER(db_Request, 
+        db_Request[State] = "In Progress")
+)
+
+State Transit = COUNTROWS(
+    FILTER(db_Request, db_Request[State] = "In Transit")
+)
+
+State Warning = COUNTROWS(
+    FILTER(db_Request, 
+        db_Request[State] = "Warning")
+)
+
+State Unscheduled = COUNTROWS(
+    FILTER(db_Request, 
+        db_Request[State] = "Unscheduled")
+)
+
+Status Pending Completion = COUNTROWS(
+    FILTER(db_Request, 
+        db_Request[Status] = "Pending Completion")
+)
+
+Last Year Request Count = CALCULATE(
+    [Total Request Count], 
+        SAMEPERIODLASTYEAR(T_Calendar[Date])
+)
+
+Request Count Difference = [Total Request Count] - [Last Year Request Count]
+
+Successful Service = SUMX(
+    db_Request,
+    IF(
+        db_Request[Status] = "Loaded" || 
+        (db_Request[Status] = "Warning" && db_Request[Reason] = "No Cargo"),
+        1, 0
+    )
+)
+
+Unique Truck = CALCULATE(
+    DISTINCTCOUNT(db_Request[Truck_ID]),
+    ALLSELECTED(T_Calendar[Date]),
+    NOT(ISBLANK(db_Request[Truck_ID]))
+)
+
+Operational Exceptions = COUNTROWS(
+    FILTER(
+        db_Request,
+        db_Request[Reason] <> "Loaded" &&
+        db_Request[Reason] <> "No Cargo" &&
+        db_Request[Reason] <> "Pending Completion" &&
+        db_Request[Reason] <> "Unscheduled"
+    )
+)
+                </code></pre>
+            </div>
+
+            <!-- Creación de Medidas de Porcentajes -->
+            <div class="paso">
+                <h4>3. Creación de Medidas de Porcentajes</h4>
+                <p>Para complementar el análisis, creé una segunda tabla de medidas (<code>T_Metrics % db_request</code>) que calcula porcentajes basados en las métricas anteriores. Esto permite entender la proporción de solicitudes en cada estado respecto al total.</p>
+                <pre><code class="language-dax">
+% State Ready = [State Ready] / [Total Request Count]
+
+% State Warning = [State Warning] / [Total Request Count]
+
+% State Unscheduled = [State Unscheduled] / [Total Request Count]
+
+% Status Pen Com = [Status Pending Completion] / [Total Request Count]
+                </code></pre>
+            </div>
+
+            <!-- Creación de Medidas para db_customer -->
+            <div class="paso">
+                <h4>4. Creación de Medidas para <code>db_customer</code></h4>
+                <p>Finalmente, creé una tabla de medidas (<code>T_Metrics db_customer</code>) para analizar métricas relacionadas con los clientes. Estas métricas incluyen el conteo de solicitudes por segmento de cliente, como "Account Customers", "Business Units", "Company Branches", "E-commerce Customer" y "Retail Business".</p>
+                <pre><code class="language-dax">
+Account Customers Count = 
+    CALCULATE(
+        COUNTROWS(db_Request),
+            db_Customer[Customer_Segment] = "Account Customers"
+    )
+
+Business Units Count = 
+    CALCULATE(
+        COUNTROWS(db_Request),
+            db_Customer[Customer_Segment] = "Business Units"
+    )
+
+Company Branches Count = 
+    CALCULATE(
+        COUNTROWS(db_Request),
+            db_Customer[Customer_Segment] = "Company Branches"
+    )
+
+E-commerce Customer Count = 
+    CALCULATE(
+        COUNTROWS(db_Request),
+            db_Customer[Customer_Segment] = "E-commerce Customer"
+    )
+
+Retail Business Count = 
+    CALCULATE(
+        COUNTROWS(db_Request),
+            db_Customer[Customer_Segment] = "Retail Business"
+    )
+                </code></pre>
+            </div>
+
+
+
+                </div>
+
+
+                        <!-- Sección para mostrar imágenes de las relaciones -->
+<div class="seccion-imagenes">
+    <h3 class="panel-titulo">Relaciones entre Orígenes de Datos</h3>
+    
+    <!-- Descripción de las relaciones -->
+    <div class="descripcion-relaciones">
+        <p>
+            El modelo de datos conecta múltiples tablas, representando distintas áreas de la empresa. Por ejemplo:
+        </p>
+        <ul>
+            <li>La tabla <strong>db_Customer</strong> se relaciona con <strong>db_Request</strong> a través del campo <em>Customer_ID</em>, permitiendo rastrear solicitudes por cliente.</li>
+            <li>La tabla <strong>db_CarrierRate</strong> está vinculada a <strong>db_TruckMetrics</strong> mediante el campo <em>Truck_ID</em>, para analizar tarifas por vehículo.</li>
+            <li>La tabla <strong>db_Budget</strong> conecta con <strong>T_Calendar</strong>, alineando presupuestos con períodos específicos.</li>
+            <li>La tabla <strong>db_Worked_truck_day</strong> se cruza con <strong>db_TruckMetrics</strong> para calcular métricas diarias de trabajo por camión.</li>
+        </ul>
+        <br>
+        <p>Las relaciones en este modelo de datos fueron diseñadas para integrar información clave de diversas áreas, como clientes, camiones, presupuestos y métricas operativas. 
+            Esto permite combinar datos que, de forma aislada, no tendrían el mismo impacto. Por ejemplo, conectar las solicitudes de clientes con el desempeño de los camiones ayuda 
+            a identificar patrones de uso, evaluar costos y mejorar la eficiencia operativa. Asimismo, vincular los presupuestos con el calendario facilita el análisis temporal para alinear recursos con las necesidades del negocio</p>
+    </div>
+    
+    <!-- Agregando la imagen de las relaciones -->
+    <div class="imagen-relaciones">
+        <img src="IMG PROYECTO 1/08. Relaciones.png" alt="Relaciones en Power BI" 
+             style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+        <p style="text-align: center; font-style: italic; margin-top: 8px;">
+            Relaciones creadas en Power BI: explicando cómo se conectan los datos.
+        </p>
+    </div>
+
+    
+</div>
+
+
+
+
+
+
+
+            <!-- Sección para las Imágenes SIN FIGMA -->
+            <div class="seccion-imagenes">
+                <h3 class="panel-titulo">Visualizaciones en Power BI (SIN FIGMA)</h3>
+                <p>Aquí mostraré algunas imagenes de los paneles creados a partir de las de las medidas creadas anteriormente, 
+                    pero los paneles finales los mostraré una vez que los alla personalizado con FIGMA para finalizar con una 
+                    Historytelling con todo lo visto.</p>
+
+                <!-- Botones para cambiar las imágenes -->
+                <div class="botones-paneles">
+                    <button class="boton-panel" onclick="cambiarImagenSinFigma(1)">Panel 1</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigma(2)">Panel 2</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigma(3)">Panel 3</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigma(4)">Panel 4</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigma(5)">Panel 5</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigma(6)">Panel 6</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigma(7)">Panel 7</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigma(8)">Panel 8</button>
+                </div>
+
+                <!-- Contenedor de la imagen actual -->
+                <div class="imagen-actual">
+                    <img id="imagen-mostrada" src="IMG PROYECTO 1/Panel_01.JPG" alt="Visualización 1">
+                    <p id="descripcion-imagen">Total 'Request' por 'Year', 'Month', y 'Type_Request' .</p>
+                </div>
+            
+            </div>
+
+            <!-- Sección para las Imágenes SIN FIGMA -->
+            <div class="seccion-imagenes">
+                <h3 class="panel-titulo">Visualizaciones en Power BI (CON FIGMA)</h3>
+                <p>Aquí mostraré los los diseños que he creado con figma para crear un impacto visual mas potente de los dashboard que he creado. Los dashboard 
+                    y paneles de mando estaran en la siguiente publicación.</p>
+
+                <!-- Botones para cambiar las imágenes -->
+                <div class="botones-paneles">
+                    <button class="boton-panel" onclick="cambiarImagenConFigma(1)">Panel 1</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigma(2)">Panel 2</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigma(3)">Panel 3</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigma(4)">Panel 4</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigma(5)">Panel 5</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigma(6)">Panel 6</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigma(7)">Panel 7</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigma(8)">Panel 8</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigma(9)">Panel 9</button>
+                </div>
+
+
+
+                <!-- Contenedor de la imagen actual -->
+                <div class="imagen-actual">
+                    <img id="imagen-mostrada-con-figma" src="IMG PROYECTO 1/Panel_09.JPG" alt="Visualización 1">
+                    <p id="descripcion-imagen-con-figma">Descripción inicial de la sección CON FIGMA.</p>
+                </div>
+
+            </div>
+
+
+                      
+            <!-- Sección para la publicación del proyecto -->
+            <div class="seccion-imagenes">
+                <h3 class="panel-titulo">Proyecto Power BI - Publicación</h3>
+                <br>
+                <p>
+                    <!-- Enlace estilizado para mejor visibilidad -->
+                    <a href="https://app.powerbi.com/links/u5hD7Yz8z5?ctid=38a1e0a1-b6b1-42e9-b3a9-597626670b17&pbi_source=linkShare" 
+                    style="color: #0056b3; font-weight: bold; text-decoration: underline;" 
+                    target="_blank" rel="noopener noreferrer">
+                    LINK: Visita el proyecto Power BI aquí
+                    </a>
+                </p>
+                <br>
+                
+                <!-- Incrustación del informe -->
+                <div class="iframe-container">
+                    <iframe title="Proyecto_01_CON_FIGMA" width="1024" height="612" 
+                            src="https://app.powerbi.com/view?r=eyJrIjoiZWIwM2VkMDctNDA0Zi00OWFiLWJiYzUtNjUxOGMxYThiMWQ1IiwidCI6IjM4YTFlMGExLWI2YjEtNDJlOS1iM2E5LTU5NzYyNjY3MGIxNyIsImMiOjR9" 
+                            frameborder="0" allowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+
+
+           <!-- Sección para conclusiones de los insight detectados -->
+<div class="tecnologias">
+    <h3 class="panel-titulo">Conclusiones del Proyecto</h3>
+    
+    <!-- Panel 1: Total Request -->
+    <h4>Panel 1: Total Request</h4>
+    <ul class="tecnologias-lista">
+        <li><strong>Análisis de Solicitudes:</strong> El modelo de datos revela que las solicitudes regulares constituyen la mayoría (aproximadamente el 70%), frente al 30% de solicitudes ocasionales. Esto demuestra la importancia de los clientes recurrentes como base del negocio.</li>
+        
+        <li><strong>Análisis de Comportamiento:</strong> Se identificaron picos de solicitudes en meses específicos como marzo, entre mayo y junio, agosto, noviembre y diciembre. Este patrón probablemente se relaciona con eventos estacionales, promociones u otras actividades comerciales específicas. Además, se observa un crecimiento continuo en las solicitudes provenientes de "Customer", lo que refleja una ampliación de la cartera de clientes. Sin embargo, las solicitudes de "Company Branches" mostraron un retroceso en 2024 tras un crecimiento constante desde 2020.</li>
+        
+        <li><strong>Advertencias y Pérdidas:</strong> Más del 93% de las solicitudes fueron gestionadas exitosamente, lo que indica un alto nivel de eficiencia operativa. Sin embargo, el 6.85% de las solicitudes presenta advertencias, y hay una pequeña proporción que no fue programada o quedó pendiente. Estas áreas necesitan atención para minimizar pérdidas asociadas con visitas sin carga.</li>
+
+        <li><strong>Crecimiento de Solicitudes por Año:</strong> Según el gráfico de barras por año, se destaca un crecimiento constante en las solicitudes anuales:
+            <ul>
+                <li>De 2020 a 2021: Incremento de 22 mil solicitudes.</li>
+                <li>De 2021 a 2022: Incremento de 16 mil solicitudes.</li>
+                <li>De 2022 a 2023: Incremento de 27 mil solicitudes.</li>
+                <li>De 2023 a 2024: Incremento de 21 mil solicitudes.</li>
+            </ul>
+            Este crecimiento refleja una expansión operativa y una mayor demanda de los servicios ofrecidos.
+        </li>
+    </ul>
+
+    <br>
+    <br>
+
+    <!-- Panel 2: Analysis Customer -->
+    <h4>Panel 2: Analysis Customer</h4>
+    <ul class="tecnologias-lista">
+        <li><strong>Crecimiento impulsado por sectores:</strong> Aunque el número total de solicitudes creció respecto al año anterior, el aumento significativo proviene de:
+            <ul>
+                <li><strong>E-commerce:</strong> Incremento destacado del 29.2% (+22.7 mil solicitudes). Este sector ha sido el principal motor de crecimiento, consolidándose como un actor clave en el negocio.</li>
+                <li><strong>Retail Business:</strong> Creció un impresionante 58.9% (+3.9 mil solicitudes), posiblemente debido a eventos o estrategias puntuales.</li>
+                <li><strong>Business Units:</strong> Aumento del 17.7% (+1.5 mil solicitudes), lo que refuerza su contribución al crecimiento total.</li>
+            </ul>
+        </li>
+        
+        <li><strong>Estancamiento en otras categorías:</strong> 
+            Account Customers y Company Branches experimentaron una caída en sus solicitudes, con un decrecimiento del -5.2% (-4.4 mil) y -4.6% (-2.7 mil), respectivamente. Esto sugiere un cambio en la dinámica de los clientes tradicionales, lo que podría requerir atención para identificar la causa y recuperar su crecimiento.
+        </li>
+
+        <li><strong>Rendimiento mensual y comportamiento por cliente:</strong> El incremento en sectores como E-commerce y Retail no fue uniforme durante todo el año, sino que se distribuyó entre diversos meses. Por ejemplo, meses como octubre y diciembre mostraron picos significativos (+5.1K y +5.3K solicitudes, respectivamente). Dentro del segmento de E-commerce, ciertos clientes individuales (como "E-commerce Customer 1" y "E-commerce Customer 2") mostraron crecimientos destacados del 17% y 17.9%, mientras que otros tuvieron un descenso marcado.
+        </li>
+    </ul>
+    <br>
+    <!-- Panel 3: Analysis Warning -->
+    <h4>Panel: Analysis Warning</h4>
+<ul class="tecnologias-lista">
+    <li><strong>Motivos principales de las advertencias:</strong> 
+        <ul>
+            <li><strong>No Cargo:</strong> Representa el 74.95% (55,048 solicitudes). Gran parte de las visitas el cliente no le esta entregando mercancías a la empresa de transporte, lo que indica una oportunidad para averiguar, mejorar relación y comunicación con los clientes.</li>
+            <li><strong>No Residents:</strong> Corresponde al 8.97% (6,587 solicitudes), sugiriendo problemas de disponibilidad a la hora del servicio.</li>
+            <li><strong>Arrival Outside Time Window:</strong> Representa el 4.28% (3,143 solicitudes), lo que indica desafíos en la coordinación de horarios por parte de la empresa que coordina este servicio.</li>
+            <li><strong>Unprepared Cargo:</strong> Representa el 2.98% (2,190 solicitudes), posiblemente derivado de una falta de preparación de los clientes o visita anticipada del operador, se debe entrar en mas detalle para definirel problema.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Tendencias mensuales:</strong> 
+        <ul>
+            <li>Los mayores picos de solicitudes con advertencias se registran en diciembre (7.9 mil) y junio (7.5 mil), asociados a temporadas de alta actividad comercial, como fiestas de fin de año y eventos de mitad de año.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Desglose por tipo de solicitudes:</strong> 
+        <ul>
+            <li>Las solicitudes Regulares representan el 62.11% de los casos, mientras que las Ocasionales suman el 37.89%, destacando la importancia de los clientes recurrentes y la oportunidad de reducir incidencias con los ocasionales.</li>
+        </ul>
+    </li>
+    
+    <li><strong>Perspectiva operativa:</strong> 
+        <ul>
+            <li>Mejorar la planificación y asignación de cargas para disminuir el porcentaje de visitas sin carga con el área comercial</li>
+            <li>Implementar sistemas de comunicación más eficientes para evitar visitas fallidas por ausencia de residentes, se requiere colaboración con área de atención al cliente.</li>
+            <li>Ajustar ventanas de tiempo y puntualidad en horarios para cumplir con las expectativas del cliente.</li>
+        </ul>
+    </li>
+</ul>
+
+<br>
+<!-- Panel: Impacto Financiero de "No Cargo" -->
+<h4>Panel: Impacto Financiero de "No Cargo"</h4>
+<ul class="tecnologias-lista">
+    <li><strong>Impacto Financiero del Estado "No Cargo":</strong> 
+        <ul>
+            <li>La pérdida total asociada a "No Cargo" asciende a <strong>$472,188,906</strong>, lo que subraya la gravedad de esta situación.</li>
+            <li>Cada visita fallida clasificada como "No Cargo" genera un gasto significativo que no ofrece retorno, lo que demuestra la necesidad de optimizar recursos y reducir este estado.</li>
+        </ul>
+    </li>
+
+    <li><strong>Tendencias Mensuales:</strong>
+        <ul>
+            <li><strong>Diciembre:</strong> Registra la mayor pérdida con <strong>$54,943,777</strong>, seguido de mayo con <strong>$42,906,888</strong>, posiblemente relacionado con picos de actividad.</li>
+            <li><strong>Marzo y septiembre:</strong> Meses con menores pérdidas, con <strong>$30,430,122</strong> y <strong>$33,616,752</strong>, lo que podría indicar una gestión más eficiente o menor demanda.</li>
+        </ul>
+    </li>
+
+    <li><strong>Relación Entre Solicitudes y Pérdidas:</strong>
+        <ul>
+            <li>Octubre tiene el mayor número de solicitudes totales (<strong>22,548</strong>), pero no las mayores pérdidas, sugiriendo una mejor tasa de éxito.</li>
+            <li>Diciembre, con menos solicitudes (<strong>21,417</strong>), supera en pérdidas, lo que resalta un problema más grave de ineficiencia durante este mes.</li>
+        </ul>
+    </li>
+
+    <li><strong>Oportunidades de Mejora Operativa:</strong>
+        <ul>
+            <li>Revisar las causas principales del estado "No Cargo" (como comunicación, planificación y preparación) para atacar directamente estas pérdidas.</li>
+            <li>Renegociar con el cliente para la entrega de carga para minimizar el impacto financiero.</li>
+            <li>Optimizar el costo por solicitud mediante ajustes en tarifas o consolidación de rutas para mejorar la eficiencia.</li>
+        </ul>
+    </li>
+</ul>
+<br>
+<!-- Panel: Daily Logistics Management Report -->
+<h4>Panel: Daily Logistics Management Report</h4>
+<ul class="tecnologias-lista">
+    <li><strong>Rendimiento General:</strong>
+        <ul>
+            <li><strong>Total Requests:</strong> Se realizaron 258,495 solicitudes durante el año 2024, con un <strong>88.5%</strong> de estas marcadas como cargadas, lo que refleja un nivel operativo eficiente pero con espacio para mejorar.</li>
+            <li><strong>No Cargo:</strong> Representa el <strong>9.4%</strong> (24,335 solicitudes), indicando un área crítica de mejora para optimizar recursos y evitar desperdicios.</li>
+            <li><strong>Operational Exceptions:</strong> Solo el <strong>2.0%</strong> (5,136 solicitudes) registraron excepciones, lo cual sugiere que las interrupciones operativas son mínimas pero deben ser monitoreadas.</li>
+            <li><strong>Pending Completion:</strong> Un porcentaje muy bajo (<strong>0.02%</strong>, 54 solicitudes) está en estado pendiente, mostrando un nivel de resolución casi completo.</li>
+            <li><strong>Unscheduled Requests:</strong> Las solicitudes no programadas representan el <strong>0.06%</strong> (167 solicitudes), señalando una buena planificación general.</li>
+        </ul>
+    </li>
+
+    <li><strong>Tendencias Mensuales y Diarias:</strong>
+        <ul>
+            <li><strong>Diciembre:</strong> Los datos sugieren una mayor presión operativa con altos niveles de solicitudes y desafíos asociados, como la baja en el porcentaje de "Successful Service" en algunos días.</li>
+            <li>La variabilidad diaria resalta la importancia de monitorear tendencias específicas, como los días con bajo "Load Factor" o mayor cantidad de excepciones operativas.</li>
+        </ul>
+    </li>
+
+    <li><strong>Oportunidades de Mejora:</strong>
+        <ul>
+            <li>Reducir el porcentaje de solicitudes en estado "No Cargo" a través de mejores prácticas de planificación y comunicación.</li>
+            <li>Revisar los días con bajo "Load Factor" para identificar patrones o problemas específicos que puedan ser abordados.</li>
+            <li>Fortalecer el proceso de resolución de excepciones operativas para reducir aún más su impacto.</li>
+        </ul>
+    </li>
+</ul>
+<br>
+<!-- Panel: Monthly Operational Report Analysis -->
+<h4>Panel: Monthly Operational Report Analysis</h4>
+<ul class="tecnologias-lista">
+    <li><strong>Rendimiento General:</strong>
+        <ul>
+            <li><strong>Total Requests:</strong> Se realizaron 258,495 solicitudes durante el año, de las cuales <strong>88.5%</strong> fueron cargadas exitosamente, destacando una operación mayoritariamente eficiente.</li>
+            <li><strong>No Cargo:</strong> Representa el <strong>9.4%</strong> (24,335 solicitudes), lo cual indica una significativa área de mejora para evitar desperdicios en recursos logísticos.</li>
+            <li><strong>Operational Exceptions:</strong> Con un <strong>2.0%</strong> (5,136 solicitudes), el impacto operativo es moderado, pero estas excepciones deben ser controladas para evitar escaladas.</li>
+            <li><strong>Pending Completion:</strong> Sólo <strong>0.02%</strong> (54 solicitudes) permanecen pendientes, lo que subraya una buena capacidad de resolución.</li>
+            <li><strong>Unscheduled Requests:</strong> Con un <strong>0.06%</strong> (167 solicitudes), se observa una adecuada planificación, con margen para eliminar estas pocas no programadas.</li>
+        </ul>
+    </li>
+
+    <li><strong>Tendencias Mensuales:</strong>
+        <ul>
+            <li><strong>Diciembre:</strong> Destaca como un mes de alta presión operativa, con más solicitudes y desafíos asociados a la carga y excepciones.</li>
+            <li><strong>Mayo:</strong> También muestra picos significativos en solicitudes, lo que podría relacionarse con demandas estacionales o eventos puntuales.</li>
+        </ul>
+    </li>
+
+    <li><strong>Aspectos Financieros:</strong>
+        <ul>
+            <li><strong>Carrier Cost:</strong> Aunque no se detallan aquí, la alineación entre el costo operativo y el presupuesto es esencial para evaluar el rendimiento financiero general.</li>
+            <li>Identificar discrepancias entre los costos presupuestados y los reales, especialmente en meses con alta actividad, puede optimizar la rentabilidad.</li>
+        </ul>
+    </li>
+
+    <li><strong>Oportunidades de Mejora:</strong>
+        <ul>
+            <li>Reducir el porcentaje de solicitudes en estado "No Cargo" mediante mejores prácticas en comunicación y planificación de las visitas.</li>
+            <li>Revisar los meses con mayor actividad (como diciembre y mayo) para identificar cuellos de botella específicos y mitigarlos con ajustes operativos.</li>
+            <li>Fortalecer el manejo de excepciones para disminuir el impacto en la eficiencia logística.</li>
+            <li>Analizar patrones de solicitudes no programadas para eliminarlas completamente y garantizar una planificación más precisa.</li>
+        </ul>
+    </li>
+</ul>
+<br>
+<!-- Panel: Monthly Carrier Cost and Budget Analysis -->
+<h4>Panel: Monthly Carrier Cost and Budget Analysis</h4>
+<ul class="tecnologias-lista">
+    <li><strong>Impacto General:</strong>
+        <ul>
+            <li>El costo total anual del transporte utilizado (<strong>Carrier Cost</strong>) fue de <strong>$5,012,517.600</strong>, ligeramente superior al presupuesto total asignado (<strong>$4,978,172.561</strong>), resultando en una diferencia negativa de <strong>($34,345.039)</strong>.</li>
+            <li>Esta desviación relativamente pequeña, equivalente al <strong>0.69%</strong> del presupuesto total, indica un manejo financiero cercano al plan, aunque aún con margen de mejora.</li>
+        </ul>
+    </li>
+
+    
+
+    <li><strong>Tendencias y Oportunidades de Mejora:</strong>
+        <ul>
+            
+            <li>El desempeño positivo en meses como abril y mayo puede servir como referencia para replicar estrategias exitosas, como el ajuste de rutas o la optimización de cargas.</li>
+            <li>Implementar análisis predictivos para anticipar periodos de alta presión (como diciembre) y mitigar costos adicionales mediante una planificación preventiva.</li>
+            <li>El costo total del transporte estuvo cerca del presupuesto, reflejando un nivel razonable de control financiero, pero aún hay oportunidades claras para mejorar en meses críticos.</li>
+            <li>Enfoques preventivos y un análisis detallado de los periodos con desviaciones significativas podrían ayudar a cerrar la brecha entre los costos y el presupuesto en futuras operaciones.</li>
+        </ul>
+    </li>
+
+</ul>
+<br>
+<!-- Panel: Budget vs. Cost Truck Analysis -->
+<h4>Panel: Budget vs. Cost Truck Analysis</h4>
+<ul class="tecnologias-lista">
+    <li><strong>Impacto General:</strong>
+        <ul>
+            <li>El costo total anual de transporte (<strong>Cost Truck</strong>) fue de <strong>$5,012,517,600</strong>, excediendo el presupuesto total de <strong>$4,978,172,561</strong> en <strong>($34,345,039)</strong>.</li>
+            <li>La desviación es relativamente pequeña (0.69%), lo que demuestra un control razonable sobre los costos, aunque con oportunidad para ajustar en meses críticos.</li>
+        </ul>
+    </li>
+
+    <li><strong>Análisis Mensual:</strong>
+        <ul>
+            <li><strong>Diciembre:</strong> Registró la mayor desviación negativa con una diferencia de <strong>($42,171,563)</strong>, probablemente debido a la alta demanda de fin de año y la presión operativa.</li>
+            <li><strong>Abril:</strong> Fue el mejor mes en términos de optimización, con una diferencia positiva significativa de <strong>$65,146,222</strong>, lo que sugiere una planificación eficiente.</li>
+            <li><strong>Junio y Septiembre:</strong> Ambos meses tuvieron desviaciones importantes de <strong>($27,048,303)</strong> y <strong>($36,878,493)</strong>, respectivamente, destacando posibles ineficiencias logísticas.</li>
+            <li>Otros meses, como <strong>Enero</strong> y <strong>Febrero</strong>, también presentaron diferencias negativas de <strong>($18,802,199)</strong> y <strong>($19,426,208)</strong>, posiblemente debido al inicio de operaciones post-fiestas.</li>
+        </ul>
+    </li>
+
+    <li><strong>Tendencias y Oportunidades:</strong>
+        <ul>
+            <li><strong>Meses exitosos:</strong> Aprender de estrategias implementadas en meses como abril y agosto, que mostraron un manejo financiero eficiente.</li>
+            <li><strong>Periodos críticos:</strong> Revisar las causas detrás de las desviaciones en diciembre, junio y septiembre para mitigar sobrecostos futuros.</li>
+            <li>Implementar mecanismos de monitoreo y ajustes dinámicos durante los meses con alta presión operativa, como diciembre, para anticiparse a posibles desviaciones.</li>
+            <li>Analizar patrones de demanda y asignación de recursos para reducir las diferencias negativas en meses recurrentes con alto costo.</li>
+            <li>La operación anual mostró un desempeño cercano al presupuesto, pero las desviaciones en meses clave resaltan la necesidad de ajustes específicos para garantizar una mayor precisión financiera.</li>
+            <li>Optimizar la gestión en meses críticos como diciembre y aplicar las buenas prácticas de meses exitosos como abril podría generar un impacto positivo significativo en los costos operativos generales.</li>
+        </ul>
+    </li>
+</ul>
+<br>
+<!-- Panel: Customer Requests and Geofencing Analysis -->
+<h4>Panel: Customer Requests and Geofencing Analysis</h4>
+<ul class="tecnologias-lista">
+    <li><strong>Impacto General:</strong>
+        <ul>
+            <li><strong>Total Requests:</strong> Se registraron un total de <strong>21,003 solicitudes</strong>, con un porcentaje exitoso del <strong>85.7%</strong> (18,025 solicitudes cargadas).</li>
+            <li><strong>Warnings:</strong> Las advertencias representan el <strong>14.14%</strong> (2,973 solicitudes), lo que sugiere áreas de oportunidad para mejorar la calidad del servicio y reducir incidentes.</li>
+        </ul>
+    </li>
+
+    <li><strong>Distribución por Geofence:</strong>
+        <ul>
+            <li><strong>Within Geofence:</strong> El <strong>74.66%</strong> de las solicitudes (15,681) se completaron dentro de las zonas geocercadas, lo que indica una cobertura adecuada en áreas establecidas.</li>
+            <li><strong>Outside Geofence:</strong> El <strong>25.34%</strong> (5,322 solicitudes) ocurrió fuera de las zonas geocercadas, posiblemente reflejando clientes o necesidades operativas en zonas menos optimizadas.</li>
+        </ul>
+    </li>
+
+    <li><strong>Rendimiento de Carriers:</strong>
+        <ul>
+            <li>Se observan variaciones significativas entre carriers. Por ejemplo, el "Carrier 68" tuvo un desempeño limitado con <strong>1 solicitud</strong> dentro de la geocerca (<strong>1.85%</strong>) y <strong>17 solicitudes</strong> fuera de ella (<strong>100.00%</strong>).</li>
+            <li>El "Carrier 40" mostró un desempeño más equilibrado con <strong>3 solicitudes</strong> dentro de la geocerca (<strong>40.00%</strong>) y <strong>5 solicitudes</strong> fuera de ella (<strong>96.15%</strong>).</li>
+            <li>Estas cifras reflejan oportunidades de ajuste en la asignación y capacitación de carriers para maximizar su eficiencia operativa dentro de las geocercas.</li>
+        </ul>
+    </li>
+
+    <li><strong>Segmentación de Clientes:</strong>
+        <ul>
+            <li>El segmento de clientes de <strong>E-commerce</strong> lidera con la mayor cantidad de solicitudes. Por ejemplo, "Customer 2434" registró <strong>1,095 solicitudes</strong> y "Customer 1188" gestionó <strong>2,421 solicitudes</strong>.</li>
+            <li>Las solicitudes no cargadas o con advertencias parecen más frecuentes en clientes con mayores volúmenes, lo que sugiere la necesidad de fortalecer la gestión de cuentas clave.</li>
+        </ul>
+    </li>
+
+    <li><strong>Oportunidades de Mejora:</strong>
+        <ul>
+            <li>Optimizar el proceso de entrega dentro de las geocercas para aprovechar el alto porcentaje de solicitudes exitosas en estas zonas.</li>
+            <li>Reducir las advertencias analizando sus principales causas y desarrollando planes de acción específicos para mitigarlas.</li>
+            <li>Evaluar el desempeño de los carriers menos eficientes y ajustar la asignación según su capacidad y desempeño en geocercas.</li>
+            <li>Fortalecer la relación con clientes clave de alto volumen, como los del segmento de E-commerce, para reducir incidencias y maximizar la satisfacción del cliente.</li>
+        </ul>
+    </li>
+
+    <li><strong>Conclusión:</strong>
+        <ul>
+            <li>El análisis sugiere un desempeño operativo sólido con un alto porcentaje de éxito en solicitudes cargadas, pero con espacio para mejorar en áreas críticas como las advertencias y la eficiencia fuera de las geocercas.</li>
+            <li>Las acciones específicas en la optimización de geocercas y la gestión de carriers pueden generar mejoras significativas en la operación general.</li>
+        </ul>
+    </li>
+</ul>
+
+<br>
+
+<!-- Panel: Customer Requests and Geofencing Analysis (2024) -->
+<h4>Panel: Customer Requests and Geofencing Analysis (2024)</h4>
+<ul class="tecnologias-lista">
+    <li><strong>Impacto General:</strong>
+        <ul>
+            <li><strong>Total Requests Assigned:</strong> Se registraron <strong>254,990 solicitudes asignadas</strong> en total durante el año 2024.</li>
+            <li><strong>Request Loaded:</strong> Un total de <strong>226,074 solicitudes</strong> fueron cargadas exitosamente, representando un <strong>88.6%</strong> del total.</li>
+            <li><strong>Warnings:</strong> Hubo <strong>28,861 advertencias</strong>, lo que equivale al <strong>11.31%</strong>, indicando áreas con potencial de mejora en la gestión operativa.</li>
+        </ul>
+    </li>
+
+    <li><strong>Distribución por Geofence:</strong>
+        <ul>
+            <li><strong>Within Geofence:</strong> El <strong>72.5%</strong> de las solicitudes fueron realizadas dentro de las geocercas, mostrando una buena cobertura en las áreas predefinidas.</li>
+            <li><strong>Outside Geofence:</strong> El <strong>27.5%</strong> de las solicitudes ocurrieron fuera de las geocercas, reflejando oportunidades para ampliar o ajustar la cobertura operativa.</li>
+        </ul>
+    </li>
+
+    <li><strong>Rendimiento por Segmento de Clientes:</strong>
+        <ul>
+            <li>El segmento de <strong>E-commerce</strong> continúa liderando en volumen de solicitudes, con clientes como "Customer 2434" y "Customer 1188" generando altas cantidades de solicitudes exitosas.</li>
+            <li>Los clientes con mayores volúmenes también presentan un mayor porcentaje de advertencias, lo que sugiere que estos clientes clave deben recibir atención prioritaria para garantizar una experiencia fluida.</li>
+        </ul>
+    </li>
+
+    <li><strong>Rendimiento de Carriers:</strong>
+        <ul>
+            <li>Se observan variaciones en el desempeño de los carriers, con algunos carriers manejando eficientemente solicitudes dentro de las geocercas, mientras otros muestran bajo rendimiento en estas áreas.</li>
+            <li>Por ejemplo, carriers con baja proporción de solicitudes exitosas fuera de las geocercas podrían beneficiarse de capacitaciones específicas o de un mejor diseño de rutas.</li>
+        </ul>
+    </li>
+
+    <li><strong>Oportunidades de Mejora:</strong>
+        <ul>
+            <li>Reducir las advertencias (<strong>Warnings</strong>) mediante la identificación y mitigación de las principales causas de estos incidentes.</li>
+            <li>Optimizar la cobertura de geocercas para incrementar el porcentaje de solicitudes dentro de estas áreas, minimizando entregas problemáticas fuera de las geocercas.</li>
+            <li>Fortalecer la relación con los clientes del segmento de E-commerce para reducir las incidencias y maximizar la satisfacción.</li>
+            <li>Evaluar el desempeño de carriers menos eficientes e implementar medidas correctivas para mejorar su productividad.</li>
+            <li>El año 2024 mostró un desempeño operativo sólido con un alto porcentaje de solicitudes cargadas exitosamente, aunque hay áreas críticas como las advertencias y las solicitudes fuera de geocercas que deben ser atendidas.</li>
+            <li>Con ajustes en la cobertura de geocercas, optimización de carriers y una mejor gestión de clientes clave, es posible alcanzar una mayor eficiencia operativa y reducir incidencias.</li>
+        </ul>
+    </li>
+<br>
+   <!-- Panel: Service Time Analysis -->
+<h4>Panel: Service Time Analysis</h4>
+<ul class="tecnologias-lista">
+    <li><strong>Impacto General:</strong>
+        <ul>
+            <li><strong>Total Requests:</strong> Durante el 2024, se gestionaron <strong>202,269 solicitudes</strong>.</li>
+            <li><strong>On Time:</strong> Un total de <strong>118,209 solicitudes</strong> (58%) se completaron puntualmente, lo que demuestra un desempeño sólido pero con margen para mejorar la consistencia en el cumplimiento de horarios.</li>
+            <li><strong>Missed Schedule:</strong> Las solicitudes fuera de horario ascienden a <strong>84,060</strong> (42%), lo que resalta una oportunidad crítica para optimizar la planificación y ejecución de las entregas.</li>
+        </ul>
+    </li>
+
+    <li><strong>Análisis Temporal:</strong>
+        <ul>
+            <li><strong>Mensual:</strong> Diciembre mostró los mayores desafíos, con un alto volumen de solicitudes y el mayor porcentaje de visitas fuera de horario, probablemente debido a la presión operativa de fin de año.</li>
+            <li><strong>Diario:</strong> Los datos diarios de enero evidencian fluctuaciones significativas, con picos de visitas puntuales y días con mayores retrasos, lo que indica la necesidad de ajustar la consistencia operativa.</li>
+        </ul>
+    </li>
+
+    <li><strong>Distribución de Visitas:</strong>
+        <ul>
+            <li><strong>On Time:</strong> Representaron el 58% de las solicitudes, siendo el mayor porcentaje, pero con suficiente espacio para crecer.</li>
+            <li><strong>Early:</strong> Un 24% de las visitas ocurrieron antes del horario programado (49,658 solicitudes), lo que puede ocasionar problemas de sincronización con los clientes.</li>
+            <li><strong>After:</strong> Un 17% de las visitas (34,236 solicitudes) fueron después del horario, generando potenciales retrasos en las cadenas de suministro.</li>
+        </ul>
+    </li>
+
+    <li><strong>Rendimiento de Carriers:</strong>
+        <ul>
+            <li>Un total de <strong>202,103 solicitudes</strong> fueron gestionadas por los carriers, con una puntualidad del <strong>58%</strong>.</li>
+            <li>Las visitas fuera de horario (<strong>After</strong>) son del 17%, lo que sugiere la necesidad de mejorar las rutas o tiempos asignados.</li>
+            <li>Los carriers con menor porcentaje de puntualidad podrían beneficiarse de revisiones operativas y capacitaciones específicas.</li>
+        </ul>
+    </li>
+
+    <li><strong>Oportunidades de Mejora:</strong>
+        <ul>
+            <li>Revisar las causas detrás de las visitas "Missed Schedule" para reducir el porcentaje de visitas fuera de horario del 42% al mínimo posible.</li>
+            <li>Optimizar las rutas de transporte y la asignación de recursos en meses clave como diciembre, donde la presión operativa es mayor.</li>
+            <li>Implementar sistemas de monitoreo en tiempo real que alerten sobre posibles retrasos y permitan ajustes inmediatos.</li>
+            <li>Evitar las visitas "Early" mediante la sincronización adecuada con los clientes para maximizar la satisfacción y eficiencia.</li>
+        </ul>
+    </li>
+
+    <li><strong>Conclusión:</strong>
+        <ul>
+            <li>El panel refleja un desempeño operacional destacado con un 58% de puntualidad, pero aún existen oportunidades significativas de mejora en la reducción de visitas fuera de horario y en la alineación de tiempos con los clientes.</li>
+            <li>Con ajustes específicos en la planificación, asignación de recursos y uso de tecnología, es posible alcanzar una mayor consistencia en los tiempos de visita y mejorar el éxito operativo en general.</li>
+        </ul>
+    </li>
+</ul>
+<br>
+<h4>Análisis Completo: Service Time Analysis</h4>
+
+<ul class="tecnologias-lista">
+    <li><strong>Impacto General:</strong>
+        <ul>
+            <li><strong>Total Requests:</strong> Se gestionaron un total de <strong>308,042 solicitudes</strong> en 2024.</li>
+            <li><strong>Distribución de Solicitudes:</strong> 
+                <ul>
+                    <li><strong>Regular:</strong> 175,773 solicitudes (57%) con una ventana horaria ajustada de 1 hora.</li>
+                    <li><strong>Ocacional:</strong> 132,269 solicitudes (43%) con una ventana horaria más amplia 8 horas.</li>
+                </ul>
+            </li>
+            <li><strong>On Time:</strong> Un 64% de las solicitudes "Ocacional" (85,452) se completaron puntualmente, mientras que solo un 40% de las solicitudes "Regular" (69,944) estuvieron a tiempo, resaltando una diferencia significativa atribuida a la flexibilidad en horarios de los "Ocacional".</li>
+        </ul>
+    </li>
+
+    <li><strong>Comparativo Temporal:</strong>
+        <ul>
+            <li><strong>Regular:</strong> Presentaron una alta tasa de "Missed Schedule" (60%), lo que indica que la ventana de 1 hora requiere ajustes operativos o mejoras en la planificación.</li>
+            <li><strong>Ocacional:</strong> Exhibieron mejores resultados, pero diciembre sigue siendo un desafío crítico, incluso con un margen horario extendido.</li>
+        </ul>
+    </li>
+
+    <li><strong>Distribución de Visitas:</strong>
+        <ul>
+            <li><strong>Regular:</strong>
+                <ul>
+                    <li><strong>Early:</strong> 24% (42,185 solicitudes) reflejan problemas de sincronización con los clientes.</li>
+                    <li><strong>After:</strong> 36% (63,644 solicitudes) generan insatisfacción e impactan negativamente la cadena de suministro.</li>
+                </ul>
+            </li>
+            <li><strong>Ocacional:</strong>
+                <ul>
+                    <li><strong>Early:</strong> 15% (19,840 solicitudes), algo mejor sincronizadas.</li>
+                    <li><strong>After:</strong> 21% (27,077 solicitudes), un margen que aún puede optimizarse con planificación específica.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li><strong>Oportunidades de Mejora:</strong>
+        <ul>
+            <li><strong>Para Solicitudes Regular:</strong>
+                <ul>
+                    <li>Optimizar rutas.</li>
+                    <li>Revisar causas principales de "After" (36%) para atacar los retrasos más comunes.</li>
+                </ul>
+            </li>
+            <li><strong>Para Solicitudes Ocacional:</strong>
+                <ul>
+                    <li>Mejorar la sincronización para reducir el porcentaje de visitas "Early" (15%).</li>
+                    <li>Enfocar esfuerzos en diciembre, ajustando recursos para manejar los picos de demanda.</li>
+                    <li>Implementar tecnología de monitoreo y alertas en tiempo real para predecir y resolver retrasos antes de que ocurran.</li>
+                    <li>Optimizar rutas de transporte para reducir tiempos y mejorar la consistencia operativa.</li>
+                    <li>El análisis evidencia diferencias claras entre los tipos de solicitudes. Mientras que las "Ocacional" presentan resultados más positivos gracias a su margen horario extendido, las "Regular" son críticas y requieren ajustes operativos para alcanzar mejores tasas de puntualidad.</li>
+            <li>Con optimizaciones específicas, como ajustes de franjas horarias, tecnologías avanzadas y una mejor gestión de recursos, es posible mejorar significativamente la eficiencia y satisfacción del cliente.</li>
+                </ul>
+            </li>
+            
+        </ul>
+    </li>
+</ul>
+
+
+</div>
+
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://github.com/Sebastianmvm"><i class="bx bxl-github"></i></a>
+            <a href="https://www.linkedin.com/in/sebastian-vargas-m/"><i class="bx bxl-linkedin-square"></i></a>
+            <!--<a href="#"><i class="bx bxl-instagram-alt"></i></a>-->
+            <!--<a href="#"><i class="bx bxl-twitter"></i></a>-->
+        </div>
+        <ul class="list">
+            <li><a href="index.html#services">Servicios</a></li>
+            <li><a href="index.html#about">Acerca de mí</a></li>
+            <li><a href="index.html#projects">Proyectos</a></li>
+            <li><a href="index.html#contact">Contáctame</a></li>
+        </ul>
+        <p class="copyright">© Sebastián Vargas | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <!-- Prism.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dax.min.js"></script>
+</body>
+</html>
