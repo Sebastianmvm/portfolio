@@ -226,7 +226,7 @@ section {
 }
 
 .about-content p {
-    font-size: 1.8rem;
+    font-size: 15px;
 }
 
 .about-content .btn {
@@ -254,23 +254,34 @@ section {
 
 .services {
     background-color: var(--bg-color);
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .services h2 {
     color: var(--text-color);
+    font-size: 4.8rem;
 }
 
-.services-container {
+/*.services-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 2rem;
     justify-content: center;
     padding: 0 5%;
+}*/
+
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    justify-content: center;
+    gap: 20px;
 }
 
-.service-box {
+
+
+/*.service-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -283,7 +294,19 @@ section {
     border: 3px solid transparent;
     transition: 0.4s ease-in-out;
     text-align: center;
+}*/
+
+.service-box {
+    padding: 20px;
+    flex: 1; /* Hace que todos los cuadros tengan el mismo tamaño */
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Suaviza los cambios */
+    transform: scale(1); /* Estado inicial */
+    min-width: 280px; /* Evita que los cuadros sean demasiado pequeños */
+    max-width: 350px; /* Tamaño máximo para evitar que ocupen toda la pantalla */
 }
+
 
 .service-box:hover {
     background: var(--second-bg-color);
@@ -292,14 +315,22 @@ section {
     transform: scale(1.03);
 }
 
-.service-info {
+/*.service-info {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
     padding: 2rem;
+}*/
+
+.service-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
+
+
 
 .service-info h4 {
     font-size: 3rem;
@@ -308,10 +339,21 @@ section {
 }
 
 .service-info p {
-    font-size: 1.2rem;
+    color: white;
+    font-size: 15px;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.6;
 }
+
+/*.service-info p {
+    flex-grow: 1; /* Permite que el texto se distribuya mejor */
+    /*overflow-wrap: break-word;*/ /* Rompe las palabras largas si es necesario */
+    /*word-wrap: break-word;
+}*/
+
+
+
+
 
 .service-info i {
     font-size: 6rem;
