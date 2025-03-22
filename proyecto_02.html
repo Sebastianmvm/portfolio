@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización de Flota - Primera Milla</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+        <!-- Encabezado -->
+        <header class="header">
+            <a href="index.html" class="logo">Sebastián<span> Vargas</span></a>
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <nav class="navbar">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Acerca de mí</a>
+                <a href="index.html#services">Servicios</a>
+                <a href="index.html#projects">Proyectos</a>
+                <a href="index.html#contact">Contáctame</a>
+            </nav>
+            <button class="gradient-btn">Contáctame</button>
+        </header>
+
+        <!-- Sección del Proyecto -->
+        <section class="proyecto">
+            <h2 class="heading">Proyecto 2</h2>
+
+                    <!-- Objetivos del Proyecto -->
+                <div class="objetivos">
+                    <h3>🎯 Objetivos del Proyecto</h3>
+                    <div class="objetivo">
+                        <h4>1️⃣ Rutas principales:</h4>
+                        <p>¿Cuáles son las rutas de envío más comunes y sus distancias promedio?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>2️⃣ Tiempos de entrega:</h4>
+                        <p>¿Qué rutas tienen los tiempos de entrega más largos?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>3️⃣ Envíos Top:</h4>
+                        <p>¿Cuáles son las fechas de reserva y entrega con mayor actividad?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>4️⃣ Análisis de retrasos:</h4>
+                        <p>¿Qué factores contribuyen a los retrasos en los envíos?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>5️⃣ Información del cliente:</h4>
+                        <p>¿Qué clientes reciben la mayoría de los envíos y experimentan retrasos?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>6️⃣ Tendencias de los proveedores:</h4>
+                        <p>¿Qué proveedores manejan la mayoría de los envíos y algunos tienen mayores retrasos?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>7️⃣ Movimiento de materiales:</h4>
+                        <p>¿Cuáles son los materiales que se envían con más frecuencia y ciertos materiales tienen tiempos de entrega más largos?</p>
+                        
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>8️⃣ Cuellos de botella:</h4>
+                        <p>¿Dónde están los retrasos de envío más comunes según los datos de GPS?</p>
+                    </div>
+                </div>
+
+
+
+            <!-- Tecnologías y Herramientas -->
+            <div class="tecnologias">
+                <h3>Tecnología y Herramientas</h3>
+                <ul class="tecnologias-lista">
+                    <li><strong>Python</strong>: Para la automatización de procesos, análisis de datos y desarrollo de scripts personalizados.</li>
+                    <li><strong>Pandas (framework)</strong>: Para manipular, limpiar y transformar datos.</li> 
+                    <li><strong>Math (framework)</strong>: Lo utilizaré para calcular distancias geográficas con el método de Haversine.</li>
+                    <li><strong>Matplotlib (framework)</strong>: Para la creación de gráficos y visualizaciones personalizadas que representen datos de manera clara.</li> 
+                    <li><strong>Excel</strong>: Para la revisión y análisis de la consistencia de los datos, además de su uso como fuente de datos inicial.</li>
+                    <li><strong>Power Query</strong>: Para la limpieza, integración y transformación de datos provenientes de distintas fuentes.</li>
+                    <li><strong>Power BI</strong>: Para la creación de dashboards interactivos y la visualización eficaz de datos clave.</li>
+                    <li><strong>Figma</strong>: Para diseñar reportes y visualizaciones con un enfoque profesional y corporativo.</li>
+                </ul>
+            </div>
+
+            
+       
+            <!-- Explicación de las Columnas de la Base Principal -->
+            <div class="tecnologias">
+                <h3>Diccionario origen de datos <code>'db_logistica'</code></h3>
+                <ul class="tecnologias-lista">
+                    <ul class="lista-detallada">
+                        <li><strong>Proveedor GPS</strong>: Proveedor de GPS que rastrea el vehículo.</li>
+                        <li><strong>ID de Reserva</strong>: Identificador único para cada reserva.</li>
+                        <li><strong>Tipo de Envío</strong>: Indica si el envío es de mercado (reserva puntual) o regular (viaje basado en contrato).</li>
+                        <li><strong>Fecha de Reserva</strong>: La fecha y hora en que se creó la reserva.</li>
+                        <li><strong>Matrícula del Vehículo</strong>: El número de registro único del vehículo utilizado para el transporte.</li>
+                        <li><strong>Ubicación de Origen</strong>: El punto inicial desde donde comienza el envío.</li>
+                        <li><strong>Ubicación de Destino</strong>: El destino final donde se entregará el envío.</li>
+                        <li><strong>Latitud de Origen</strong>: Latitud de la ubicación de origen.</li>
+                        <li><strong>Longitud de Origen</strong>: Longitud de la ubicación de origen.</li>
+                        <li><strong>Latitud de Destino</strong>: Latitud de la ubicación de destino.</li>
+                        <li><strong>Longitud de Destino</strong>: Longitud de la ubicación de destino.</li>
+                        <li><strong>Hora de Ping de Datos</strong>: La marca de tiempo del último ping de datos GPS registrado del vehículo.</li>
+                        <li><strong>ETA Planificada</strong>: La hora estimada de llegada al destino según el plan de viaje.</li>
+                        <li><strong>Ubicación Actual</strong>: La ubicación más reciente conocida del vehículo.</li>
+                        <li><strong>ETA Real</strong>: La hora real de llegada al destino.</li>
+                        <li><strong>Latitud de Ubicación Actual</strong>: La latitud de la ubicación actual del vehículo.</li>
+                        <li><strong>Longitud de Ubicación Actual</strong>: La longitud de la ubicación actual del vehículo.</li>
+                        <li><strong>A Tiempo</strong>: Indica si el vehículo llegó a tiempo (Sí/No).</li>
+                        <li><strong>Fecha de Inicio del Viaje</strong>: La fecha y hora reales de inicio del viaje.</li>
+                        <li><strong>Fecha de Fin del Viaje</strong>: La fecha y hora estimadas de llegada.</li>
+                        <li><strong>Distancia de Transporte (KM)</strong>: La distancia total recorrida por el vehículo durante el viaje en kilómetros.</li>
+                        <li><strong>Tipo de Vehículo</strong>: El tipo de vehículo utilizado para el envío (ej., camión de 32 pies, Tata Ace, multi-eje).</li>
+                        <li><strong>Kilómetros Mínimos a Cubrir por Día</strong>: La distancia mínima que se espera que el vehículo cubra en un solo día.</li>
+                        <li><strong>Nombre del Conductor</strong>: El nombre del conductor asignado al viaje.</li>
+                        <li><strong>Número de Móvil del Conductor</strong>: El número de contacto del conductor.</li>
+                        <li><strong>Nombre del Cliente</strong>: El nombre del cliente que recibe el envío.</li>
+                        <li><strong>Nombre del Proveedor</strong>: El nombre del proveedor que envía el envío.</li>
+                        <li><strong>Material Enviado</strong>: Una descripción de los materiales transportados en el envío.</li>
+                    </ul>
+                </ul>
+            </div>
+
+        
+            <!-- Tecnologías y Herramientas -->
+            <div class="tecnologias">
+                <h3>Manipulación, limpieza y transformación de datos</h3>
+                <ul class="tecnologias-lista">
+                    <li><strong>Python</strong>: Para la automatización de procesos, análisis de datos y desarrollo de scripts personalizados.</li>
+                    <li><strong>Pandas (framework)</strong>: Para manipular, limpiar y transformar datos.</li> 
+                    <li><strong>Math (framework)</strong>: Lo utilizaré para calcular distancias geográficas con el método de Haversine.</li>
+                    <li><strong>Matplotlib (framework)</strong>: Para la creación de gráficos y visualizaciones personalizadas que representen datos de manera clara.</li> 
+                    <li><strong>Excel</strong>: Para la revisión y análisis de la consistencia de los datos, además de su uso como fuente de datos inicial.</li>
+                    <li><strong>Power Query</strong>: Para la limpieza, integración y transformación de datos provenientes de distintas fuentes.</li>
+                    <li><strong>Power BI</strong>: Para la creación de dashboards interactivos y la visualización eficaz de datos clave.</li>
+                    <li><strong>Figma</strong>: Para diseñar reportes y visualizaciones con un enfoque profesional y corporativo.</li>
+                </ul>
+
+
+            </div>
+
+            
+        
+            <!-- Análisis Exploratorio de Datos (EDA) -->
+        <div class="proceso">
+            <h3>Análisis Exploratorio de Datos (EDA)</h3>
+            
+            <!-- Paso 1 -->
+            <div class="paso">
+                <h4>Paso 1: Carga y Exploración Inicial de Datos</h4>
+                <ul class="tecnologias-lista">
+                    <li>Importamos librerías.</li>
+                    <li>Carga del dataset desde un archivo Excel.</li>
+                    <li>Exploración inicial.</li>
+                </ul>
+               
+            </div>
+
+            <pre>
+                <code class="language-dax">
+     # Importar librerías
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        from math import radians, sin, cos, sqrt, atan2          
+                </code>
+            </pre>
+
+            <pre>
+                <code class="language-dax">
+    # Cargar el archivo Excel
+        file_path = 'Transportation & Logistics Tracking Dataset_Spanish.xlsx'
+        df = pd.read_excel(file_path, sheet_name='Datos Primarios')        
+                </code>
+            </pre>
+
+            <pre>
+                <code class="language-dax">
+    # Exploración inicial de los datos
+        df.head()
+        df.info()   
+                </code>
+            </pre>
+
+            <pre>
+                <img src="IMG PROYECTO 1/df.info.PNG" alt="df.info()">
+            </pre>
+
+            <pre>
+                <code class="language-dax">
+    # Verificar valores nulos, NA y celdas vacías
+    null_values = df.isnull().sum()
+    na_values = df.isna().sum()
+    empty_values = (df == '').sum()
+    
+    # Mostrar el resumen de valores nulos, NA y celdas vacías
+    print("Valores nulos por columna:")
+    print(null_values)
+    print("\nValores NA por columna:")
+    print(na_values)
+    print("\nCeldas vacías por columna:")
+    print(empty_values)
+                </code>
+            </pre>  
+            <pre>
+                <img src="IMG PROYECTO 1/df.isnull().sum().PNG" alt="df.isnull()">
+            </pre>
+            
+            <div class="paso">
+                <h4>Paso 2: Transformación de datos</h4>
+                <p>Al detectar campos con datatype incorresctos y valores vacíos como nulos procederé a modificarlos.
+
+                </p>
+        </div>
+
+            <pre>
+                <code class="language-dax">
+    # Convertir formatos de fecha
+    df['ETA Real'] = pd.to_datetime(df['ETA Real'], errors='coerce')
+    df['ETA Planificada'] = pd.to_datetime(df['ETA Planificada'], errors='coerce')
+    df['Fecha de Inicio del Viaje'] = pd.to_datetime(df['Fecha de Inicio del Viaje'], errors='coerce')
+    df['Fecha de Fin del Viaje'] = pd.to_datetime(df['Fecha de Fin del Viaje'], errors='coerce') 
+                </code>
+            </pre>  
+    
+            <pre>
+                <code class="language-dax">
+  
+    #Eliminamos registros sin Proveedor GPS
+    df = df.dropna(subset=['Proveedor GPS']) 
+
+    #Cambiamos los valores nulos con la mediana de la columna.
+    df['Kilómetros Mínimos a Cubrir por Día'] = df['Kilómetros Mínimos a Cubrir por Día'].fillna(df['Kilómetros Mínimos a Cubrir por Día'].median()) 
+
+    #Cambiamos los valores nulos con la moda de la columna.
+    df['ETA Real'] = df['ETA Real'].fillna(df['ETA Real'].mode()[0]) 
+    
+    #Cambiamos los valores nulos con la cadena 'Falta Información'
+    df['Tipo de Vehículo'] = df['Tipo de Vehículo'].fillna('Falta Información') 
+    
+    #Cambiamos los valores nulos con la cadena 'Falta Información'
+    df['Nombre del Conductor'] = df['Nombre del Conductor'].fillna('Falta Información') 
+    
+    #Cambiamos los valores nulos con la cadena 'Falta Información'
+    df['Número de Móvil del Conductor'] = df['Número de Móvil del Conductor'].fillna('Falta Información') 
+    
+                </code>
+            </pre>  
+
+            <pre>
+                <code class="language-dax">
+  
+    # Segunda verificación de valores nulos, NA y celdas vacías
+    null_values = df.isnull().sum()
+    na_values = df.isna().sum()
+    empty_values = (df == '').sum()
+    
+    # Mostrar el resumen de valores nulos, NA y celdas vacías
+    print("Valores nulos por columna:")
+    print(null_values)
+    print("\nValores NA por columna:")
+    print(na_values)
+    print("\nCeldas vacías por columna:")
+    print(empty_values)
+    
+                </code>
+            </pre> 
+            <pre>
+                <img src="IMG PROYECTO 1/df.isnull().sum() resultado.PNG" alt="df.isnull()">
+            </pre>
+
+            <pre>
+                <code class="language-dax">
+  
+    # Exportamos el DataFrame limpio a un archivo Excel
+    df.to_excel('db_Transportation_&_Logistics_Tracking.xlsx', index=False, sheet_name='Datos Limpios')
+    
+    print("Archivo exportado exitosamente como 'db_Transportation_&_Logistics_Tracking.xlsx'")
+    
+                </code>
+            </pre> 
+
+
+
+
+
+
+
+
+        </div>
+
+        <!-- Proceso de Creación del Dashboard -->
+        <div class="proceso">
+            <h3>Proceso de Creación del Dashboard</h3>
+            
+            <!-- Paso 1 -->
+            <div class="paso">
+                <h4>Paso 1: Importación de Datos</h4>
+                <div class="contenido-paso">
+                    
+                    <p>Importamos archivo limpio, previamente manipulado. 
+                        Iremos a Power Query para transformar algunos de sus campos.</p>
+                         <br>
+                         <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 02 - CARGAR DB.PNG" alt="Importación de datos en Power BI">
+                </div>
+            </div>
+
+
+            <!-- Paso 2 -->
+            <div class="paso">
+                <h4>Paso 2: Modificación de Campos</h4>
+                <div class="contenido-paso">
+                
+                    <p>En PowerQuery, fui a la opción 'Transformar' > 'Columna de texto' > 'Dividir columna' > 'Dividir columna por Delimitador' > Separamos por ',', esto nos permitira reconocer el nombre 
+                        de la compañia o el nombre de la bodega, luego tendremos la ubicación específica del distrito en donde se encuentra esa bodega y por último tendremos el estado del país indio.</p>
+                        <br>
+                        <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 02 - DIVIDIR POR DELIMITADOR COMA.PNG" alt="DIVIDIR COLUMNAS POR DELIMITADOR">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.1 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>Una vez divididas los campos de Ubicación de Origen y Destino, eliminamos los espacios, para evitar cualquier tipo de error.
+                    </p>
+                    <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 02 - columnas divididas.png" alt="DIVIDIR COLUMNAS POR DELIMITADOR">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.2 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>A continuación procederé a separar columna con formato de Fecha/Hora a Fecha y Hora por separado para trabajar de mejor manera los análisis de tiempo </p>
+                    <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 02 - FECHAHORA.PNG" alt="Visualizaciones en Power BI">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.3 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>Campos separados. Utilizando dividir columna por separador 'Espacio'</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 02 - fechahora separada.png" alt="Visualizaciones en Power BI">
+                    
+                </div>
+            </div>
+        </div>    
+
+        <!-- Tabla Calendario, Medidas y Fórmulas DAX -->
+        <div class="tecnologias">
+            <h3>Tabla Calendario, Medidas y Fórmulas DAX</h3>
+            
+            <!-- Creación de la Tabla Calendario -->
+            <div class="paso">
+                <h4>1. Creación de la Tabla Calendario</h4>
+                <p>Para facilitar el análisis temporal, creé una tabla de calendario (<code>Tabla Calendario</code>) que contiene fechas iterativas basadas en el rango de fechas de la tabla <code>db_logistica</code>. Luego, agregué columnas adicionales para desglosar la fecha en componentes útiles como día, mes, año, semestre y semana.</p>
+                <pre><code class="language-dax">
+    Tabla Calendario = CALENDAR(
+        MIN(db_logistica[Fecha de Reserva]),
+        MAX(db_logistica[Fecha de Reserva]))
+                </code></pre>
+
+                <p>Columnas adicionales:</p>
+                <pre><code class="language-dax">
+    Año = YEAR('Tabla Calendario'[Date])
+    Mes = MONTH('Tabla Calendario'[Date])
+    Día = DAY('Tabla Calendario'[Date])
+    Mes Nombre = FORMAT('Tabla Calendario'[Date], "mmmm")
+    Día Nombre = FORMAT('Tabla Calendario'[Date], "dddd") 
+    Semestre = IF(MONTH([Date]) <= 6, 1, 2)
+    Día Numérico = WEEKDAY('Tabla Calendario'[Date], 2)
+                </code></pre>
+            </div>
+
+            <!-- Creación de Medidas para db_Logistica -->
+            <div class="paso">
+                <h4>2. Creación de Medidas para <code>db_logistica</code></h4>
+                <p>Creé una tabla de medidas (<code>Tabla Medidas</code>) para calcular métricas claves relacionadas con las Reservas, Transporte y Niveles de Servicio.</p>
+                <pre><code class="language-dax">
+    Total ID Reserva = COUNT(db_logistica[ID de Reserva])
+
+    Total Market = CALCULATE(
+        COUNTROWS(db_logistica),
+                    db_logistica[Tipo de Envío] = "Market")
+
+    Total Regular = CALCULATE(
+        COUNTROWS(db_logistica),
+            db_logistica[Tipo de Envío] = "Regular")
+
+    SUM Distancia de Transporte (KM) = SUM(db_logistica[Distancia de Transporte (KM)])
+
+    Entrega Anticipada = CALCULATE(
+        COUNTROWS(db_logistica), db_logistica[Estado_Entrega] = "Entrega Anticipada")
+
+    Entrega Mismo Día = CALCULATE(
+        COUNTROWS(db_logistica), db_logistica[Estado_Entrega]="Entrega mismo día")
+
+    Entrega Fuera de Plazo = CALCULATE(
+        COUNTROWS(db_logistica), db_logistica[Estado_Entrega] = "Entrega fuera de plazo")
+
+    AVG Días de Entrega = AVERAGE(db_logistica[Días_ETA_Real_vs_Planificada])
+
+    AVG Distancia por Ruta = 
+        AVERAGEX(
+            db_logistica, 
+            db_logistica[Distancia de Transporte (KM)])
+
+    AVG_Días_Reserva = 
+        AVERAGE(db_logistica[Días_Reserva_ETA])
+    
+
+    AVG_Envios_Dias = 
+        AVERAGEX(
+            db_logistica, 
+            DATEDIFF(
+                db_logistica[Fecha de Reserva] + db_logistica[Hora de Reserva], 
+                db_logistica[Fecha ETA Real] + db_logistica[Hora ETA Real], 
+                DAY
+            )
+        )
+
+    Tiempo de Entrega desde Reserva = 
+        VAR Diferencia = DATEDIFF( db_logistica[Fecha de Reserva] + db_logistica[Hora de Reserva], 
+                                    db_logistica[Fecha ETA Real] + db_logistica[Hora ETA Real], SECOND)
+        VAR Dias = QUOTIENT(Diferencia, 86400)  // 86400 segundos en un día
+        VAR Horas = QUOTIENT( MOD(Diferencia, 86400), 3600 )  // 3600 segundos en una hora
+        VAR Minutos = QUOTIENT( MOD(Diferencia, 3600), 60 )  // 60 segundos en un minuto
+        RETURN
+            FORMAT(Dias, "0") & " días, " & FORMAT(Horas, "0") & " horas, " & FORMAT(Minutos, "0") & " minutos"
+
+    Estado_Entrega = 
+        VAR FechaPlanificada = db_logistica[Fecha ETA Planificada]
+        VAR FechaETAReal = db_logistica[Fecha ETA Real]
+        RETURN
+            IF(
+                FechaETAReal = FechaPlanificada, 
+                "Entrega mismo día",
+                IF(
+                    FechaETAReal > FechaPlanificada, 
+                    "Entrega fuera de plazo",
+                    "Entrega Anticipada"
+                )
+            )
+
+    Rango_Horas_ETA_Real = 
+        " " & FORMAT(TIME(HOUR(db_logistica[Hora ETA Real]), 0, 0), "hh:mm") & " - " &
+        FORMAT(TIME(HOUR(db_logistica[Hora ETA Real]) + 1, 0, 0), "hh:mm")
+                </code></pre>
+            </div>
+
+            <!-- Creación de Medidas de Porcentajes -->
+            <div class="paso">
+                <h4>3. Creación de Medidas para Porcentajes</h4>
+                <p>Para complementar el análisis, creé una segunda tabla de medidas (<code>Tabla %</code>) que calcula porcentajes basados en las métricas anteriores. Esto permite entender la proporción de Reservas en cada estado respecto al total.</p>
+                <pre><code class="language-dax">
+                    
+    % Total Regular = DIVIDE([Total Regular],[Total ID Reserva]) 
+
+    % Total Market = DIVIDE([Total Market], [Total ID Reserva]) 
+
+    % Entrega mismo día = DIVIDE([Entrega Mismo Día],[Total ID Reserva])
+
+    % Entrega fuera de plazo = DIVIDE([Entrega Fuera de Plazo],[Total ID Reserva])
+
+    % Entrega Anticipada = DIVIDE([Entrega Anticipada],[Total ID Reserva])
+                </code></pre>
+            </div>
+
+
+                </div>
+
+
+                        <!-- Sección para mostrar imágenes de las relaciones -->
+<div class="seccion-imagenes">
+    <h3 class="panel-titulo">Relaciones entre Orígenes de Datos</h3>
+    
+    <!-- Descripción de las relaciones -->
+    <div class="descripcion-relaciones">
+        <p>
+            El modelo de datos lo conectamos con nuestra Tabla Calendario para analizar los datos de la tabla <code>db_logistica</code> en base al tiempo.
+            
+        </p>
+        <ul>
+            <li>La tabla <strong>db_logistica</strong> se relaciona con <strong>Tabla Calendario</strong> a través del campo <em>Fecha de Reserva</em> de muchos a uno</li>
+        </ul>
+        <br>
+    
+    </div>
+    
+    <!-- Agregando la imagen de las relaciones -->
+    <div class="imagen-relaciones">
+        <img src="IMG PROYECTO 1/PROYECTO 02 - relaciones.PNG" alt="Relaciones en Power BI" 
+             style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+        <!--<p style="text-align: center; font-style: italic; margin-top: 8px;">
+            Relaciones creadas en Power BI: explicando cómo se conectan los datos.
+        </p> -->
+    </div>
+
+    
+</div>
+
+            <!-- Sección para las Imágenes SIN FIGMA -->
+            <div class="seccion-imagenes">
+                <h3 class="panel-titulo">Visualizaciones en Power BI (SIN FIGMA)</h3>
+                <p>Aquí mostraré algunas imagenes de los paneles creados a partir de las de las medidas creadas anteriormente, 
+                    pero los paneles finales los mostraré una vez que los alla personalizado con FIGMA para finalizar con una 
+                    Historytelling con todo lo visto.</p>
+
+                <!-- Botones para cambiar las imágenes -->
+                <div class="botones-paneles">
+                    <button class="boton-panel" onclick="cambiarImagenSinFigmaProyecto2(1)">Panel 1</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigmaProyecto2(2)">Panel 2</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigmaProyecto2(3)">Panel 3</button>
+                </div>
+
+                <!-- Contenedor de la imagen actual -->
+                <div class="imagen-actual">
+                    <img id="imagen-mostrada-proyecto2" src="IMG PROYECTO 1/PROYECTO 02 - Panel 1 sin figma.PNG" alt="Visualización 1">
+                    <p id="descripcion-imagen-proyecto2">Análisis de Reservas .</p>
+                </div>
+            
+            </div>
+
+            <!-- Sección para las Imágenes CON FIGMA -->
+            <div class="seccion-imagenes">
+                <h3 class="panel-titulo">Visualizaciones en Power BI (CON FIGMA)</h3>
+                <p>Aquí mostraré los los diseños que he creado con figma para crear un impacto visual mas potente de los dashboard que he creado. Los dashboard 
+                    y paneles de mando estaran en la siguiente publicación.</p>
+
+                <!-- Botones para cambiar las imágenes -->
+                <div class="botones-paneles">
+                    <button class="boton-panel" onclick="cambiarImagenConFigmaProyecto2(1)">Panel 1</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigmaProyecto2(2)">Panel 2</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigmaProyecto2(3)">Panel 3</button>
+                </div>
+
+
+
+                <!-- Contenedor de la imagen actual -->
+                <div class="imagen-actual">
+                    <img id="imagen-mostrada-con-figma-proyecto2" src="IMG PROYECTO 1/PROYECTO 02 - Panel 1 con figma.PNG" alt="Visualización 1">
+                    <p id="descripcion-imagen-con-figma-proyecto2">Descripción inicial de la sección CON FIGMA.</p>
+                </div>
+
+            </div>
+
+
+                      
+            <!-- Sección para la publicación del proyecto -->
+            <div class="seccion-imagenes">
+                <h3 class="panel-titulo">Proyecto Power BI - Publicación</h3>
+                <br>
+                <p>
+                    <!-- Enlace estilizado para mejor visibilidad -->
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiZjA3MmFhNWItNDY4OS00YTQwLWExMmItMGQyNjhmZDA5ZDRhIiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9" 
+                    style="color: #0056b3; font-weight: bold; text-decoration: underline;" 
+                    target="_blank" rel="noopener noreferrer">
+                    LINK: Visita el proyecto Power BI aquí
+                    </a>
+                </p>
+                <br>
+                
+                <!-- Incrustación del informe -->
+                <div class="iframe-container">
+                    <iframe title="Proyecto_01_CON_FIGMA" width="1024" height="612" 
+                            src="https://app.powerbi.com/view?r=eyJrIjoiZjA3MmFhNWItNDY4OS00YTQwLWExMmItMGQyNjhmZDA5ZDRhIiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9" 
+                            frameborder="0" allowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+
+
+           <!-- Sección para conclusiones de los insight detectados -->
+<div class="tecnologias">
+    <h3 class="panel-titulo">Conclusiones del Proyecto</h3>
+    
+    <!-- Panel 1: Análisis de Reservas -->
+    <h4>Panel 1: Análisis de Reservas</h4>
+    <ul class="tecnologias-lista">
+        <li><strong>Análisis de Reservas:</strong> El modelo de datos revela que las Reservas Regulares constituyen la mayoría con 3.525 ordenes, frente a 58 Reservas Market. Esto demuestra la importancia de los clientes Regulares como base del negocio.</li>
+        
+        <li><strong>Análisis de Comportamiento:</strong> Se identificaron picos de solicitudes en años y meses específicos como lo fué el año 2020 con 3.401 Reservas frente a 182 Reservas del año 2019, y en los meses del año 2020 entre junio y agosto se aprecian los pick mas altos (Junio: 496, Julio: 942, Agosto: 1.432).</li>
+        
+        <li><strong>Estado de Entregas:</strong> Más del 61% de las solicitudes de las Reservas u ordenes fueron entregadas fuera de plazo según su planificación, mostrando un deficit operativo. Sin embargo, el 38.52% de las Reservas fueron entregadas a tiempo según planificación, lo que sugiere opciones de mejora.</li>
+
+        <li><strong>Crecimiento de Solicitudes por Año:</strong> Según las cantidades de reservas por año podemos decir que:
+            <ul>
+                <li>De 2019 a 2020: Hubo un incremento de 3.401 solicitudes equivalente a un crecimiento del 1.768%.</li>
+            </ul>
+            Este crecimiento refleja una expansión operativa y una mayor demanda de los servicios ofrecidos.
+        </li>
+    </ul>
+    <br>
+    <p>
+        El análisis de reservas revela una evolución significativa en la cantidad de solicitudes, con un crecimiento exponencial del 1.768% de 2019 a 2020. 
+        Este incremento refleja una mayor demanda y expansión operativa, pero también destaca la importancia de optimizar los procesos logísticos para garantizar 
+        que este crecimiento sea sostenible. La gran mayoría de las reservas provienen de clientes regulares, lo que subraya la necesidad de fidelizar a este segmento 
+        y garantizar que su experiencia sea eficiente y confiable. Sin embargo, un punto crítico identificado es el cumplimiento en los tiempos de entrega, ya que más 
+        del 61% de las reservas se entregaron fuera de plazo. Esto indica un déficit operativo que podría afectar la percepción del servicio y la retención 
+        de clientes a largo plazo. Para mejorar, se recomienda implementar herramientas de pronóstico de demanda, optimizar la asignación de recursos y 
+        reforzar los sistemas de seguimiento y planificación de entregas para minimizar los retrasos y garantizar un servicio más confiable.
+    </p>
+    <br>
+    <h4>Recomendaciones:</h4>
+    <ul>
+        <li>Implementar herramientas de pronóstico de demanda para anticipar necesidades logísticas y distribuir mejor los recursos.</li>
+        <li>Optimizar la asignación de vehículos y conductores para equilibrar la carga de trabajo y reducir tiempos de espera.</li>
+        <li>Mejorar la planificación de entregas, ajustando los tiempos de preparación y salida para minimizar retrasos.</li> 
+        <li>Establecer un margen de tiempo adicional en la planificación para contingencias, como condiciones climáticas adversas o problemas mecánicos.</li>
+        <li>Utilizar software de gestión de órdenes que permita automatizar la asignación de recursos y mejorando la eficiencia en la coordinación de recursos y planificación de entrega.</li>
+        <li>Incorporar herramientas de inteligencia artificial para predecir picos de demanda en función de temporadas, eventos o tendencias históricas, y ajustar la capacidad operativa en consecuencia.</li>
+        <li>Implementar un sistema de notificaciones en tiempo real para informar a los clientes sobre el estado de sus reservas, incluyendo posibles retrasos y soluciones alternativas.</li>
+
+    </ul>
+
+
+    <br>
+    <br>
+
+    <!-- Panel 2: Análisis de Transporte -->
+    <h4>Panel 2: Análisis de Transporte</h4>
+    <ul class="tecnologias-lista">
+        <li><strong>2019</strong></li>
+            <ul>
+                <li><strong>Cantidad de Camiones:</strong> Se utilizaron 146 camiones para entregar 182 órdenes de entrega.</li>
+                <li><strong>Estado de Entrega:</strong> De las 182 ordenes, el 100% fué entregada fuera de plazo según planificación.</li>
+                <li><strong>Rutas con mayor kilometraje:</strong> Ruta de origen: Mumbai. Destino: Bangalore. Distancia: 3.157 KM, y se utilizaron 3 camiones de 20 pies.</li> 
+                <li><strong>Rutas con mayores Retrasos:</strong> WestBengal, Odisha y Delhi son los estados que presentan los mayores retrasos de entrega.</li>
+                <li><strong>Kilometros mínimos a recorrer por camión (250 KM):</strong> Hubo un promedio total de 170 KM, lo que nos dice que los camiones recorrieron menos kilometros según lo establecido por la empresa.</li>
+                <li><strong>Días y Horarios con Mayores Retrasos</strong>Se aprecia que los días Lunes y Jueves presentan los mayores retrasos entre las 01:00 y 02:00 AM.</li>
+                <li><strong>Tipo de Vehiculos con Mayores Retrasos</strong>Podemos ver que los camiones de 40 pies semi remolques tienen las mayores solicitudes de reservas de entrega con retrasos.</li>
+            </ul>
+        </li>
+
+        <li><strong>2020</strong></li>
+            <ul>
+                <li><strong>Cantidad de Camiones:</strong> Se utilizaron 1.188 camiones para entregar 3.401 órdenes de entrega.</li>
+                <li><strong>Estado de Entrega:</strong> De las 3.401 ordenes, el 33% fué entregada a tiempo, 11% al límite de la fecha de entrega y un 56% fuera de plazo según planificación.</li>
+                <li><strong>Rutas con mayor kilometraje:</strong> Ruta de origen: Gurgaon. Destino: Kanchipuram. Distancia: 391.950 KM, y se utilizaron 89 camiones de 32 pies.</li> 
+                <li><strong>Rutas con mayores Retrasos:</strong> TamilNadu, Haryana y Maharashtra son los estados que presentan los mayores retrasos de entrega.</li>
+                <li><strong>Kilometros mínimos a recorrer por camión (250 KM):</strong> Hubo un promedio total de 887 KM, lo que nos dice que los camiones recorrieron más kilometros según lo establecido por la empresa.</li>
+                <li><strong>Días y Horarios con Mayores Retrasos</strong>Se aprecia que los días Lunes, martes y Jueves presentan los mayores retrasos de entrega entre las 11:00 y 18:00 PM.</li>
+                <li><strong>Tipo de Vehiculos con Mayores Retrasos</strong>Podemos ver que los camiones de 32 Y 40 pies tienen las mayores solicitudes de entrega con retrasos.</li>
+            </ul>
+        </li>
+    <br>
+    <p>
+        El análisis del transporte muestra un aumento significativo en la utilización de camiones, pasando de 146 en 2019 a 1.188 en 2020, en respuesta al crecimiento de la demanda. No obstante, la eficiencia 
+        operativa aún presenta desafíos, ya que en 2019 el 100% de las entregas fueron fuera de plazo, y aunque en 2020 hubo una mejora relativa con un 33% de entregas puntuales, el 56% aún sufrió retrasos. 
+        Esto refleja la necesidad de optimizar las rutas y mejorar la planificación de la flota para garantizar una distribución más eficiente. Además, se evidenció que los camiones de 32 y 40 pies tienden a 
+        presentar más retrasos, lo que sugiere que es necesario evaluar si el tipo de vehículo utilizado es el más adecuado para ciertas rutas. También se identificaron horarios críticos de retraso, especialmente los 
+        lunes, martes y jueves en franjas horarias específicas, lo que permite replantear la programación de despachos para evitar congestionamientos. Para mejorar el rendimiento logístico, se recomienda implementar 
+        tecnologías de monitoreo en tiempo real, optimizar el uso de los camiones con rutas más eficientes y considerar estrategias como la redistribución de vehículos según la demanda de cada zona.
+    </p>
+    <br>
+    <h4>Recomendaciones:</h4>
+    <ul>
+        <li>Implementar tecnología de monitoreo en tiempo real de los encargos, como TMS, SAAS, etc.</li>
+        <li>Utilizar software de optimización de rutas que considere factores como el tráfico, las condiciones de las carreteras y la distancia para reducir tiempos de entrega y costos de combustible.</li>
+        <li>Realizar un análisis de la capacidad de carga de los camiones para evitar subutilización o sobrecarga. Por ejemplo, evaluar si los camiones de 32 y 40 pies son los más adecuados para ciertas rutas.</li>
+        <li>Ajustar la programación de despachos en días y horarios críticos para reducir el impacto de la congestión.</li> 
+        <li>Evaluar vehículos más adecuados para ciertas rutas, especialmente donde los camiones más grandes presentan demoras.</li>
+        <li>Establecer rutas fijas para ciertos destinos frecuentes y asignar conductores especializados en rutas críticas o de mayor valor.</li>
+        <li>Implementar un sistema de mantenimiento preventivo para reducir fallas mecánicas que puedan causar retrasos.</li>
+        <li>Reasignar camiones y conductores según la demanda geográfica, priorizando áreas con mayores retrasos o mayor volumen de entregas.</li>
+        <li>Considerar el uso de vehículos más pequeños para entregas locales o en áreas urbanas congestionadas.</li>
+        <li>Establecer incentivos para conductores que cumplan con los plazos de entrega y mantengan un buen desempeño operativo.</li>
+    </ul>
+<br>
+
+    <!-- Panel 3: Análisis Operativo -->
+    <h4>Panel 3: Análisis Operativo</h4>
+
+    <ul class="tecnologias-lista">
+        <li><strong>Retrasos en Conductores:</strong> Se identificó una alta tasa de retrasos en la entrega, donde algunos conductores presentan más del 70 % de sus entregas fuera de plazo. No obstante, un grupo reducido ha demostrado mayor eficiencia, lo que sugiere diferencias en el desempeño operativo.</li>
+        <li><strong>Materiales con Mayores Retrasos:</strong> Se detectaron fallos en la planificación de inventario y distribución, reflejados en los siguientes materiales con altos índices de retraso en la entrega:
+          <ul>
+            <li><strong>Spindle Assy:</strong> 76 % de retraso.</li>
+            <li><strong>Wiper Motor Link:</strong> 71 % de retraso.</li>
+            <li><strong>Ball Bearing:</strong> 68 % de retraso.</li>
+          </ul>
+        </li>
+        <li><strong>Materiales con Mejor Cumplimiento:</strong> Algunos materiales lograron un mejor desempeño en términos de puntualidad de entrega:
+          <ul>
+            <li><strong>Solenoid Assy:</strong> 35 % de entregas a tiempo.</li>
+            <li><strong>Empty Foam:</strong> 31 % de entregas a tiempo.</li>
+          </ul>
+        </li>
+        <li><strong>Falta de Datos en Entregas:</strong> Se detectó que en múltiples casos no se cuenta con información completa sobre la puntualidad de las entregas. Esta falta de datos afecta la precisión del análisis y dificulta la identificación de problemas específicos.</li>
+      </ul>
+      <br>
+      <p>
+        El análisis operativo revela que la eficiencia en la entrega sigue siendo un desafío crítico, con un alto porcentaje de retrasos en algunos conductores y ciertos materiales mostrando un desempeño deficiente. La falta de datos sobre puntualidad en muchas entregas dificulta una evaluación precisa de la operación y limita la capacidad de aplicar mejoras efectivas.
+        Para optimizar el desempeño, es esencial implementar sistemas de monitoreo en tiempo real, mejorar la planificación del inventario y capacitar a los conductores en estrategias de optimización de rutas. Asimismo, se recomienda una evaluación más detallada de los factores que contribuyen a los retrasos en los materiales críticos.
+      </p>
+      <br>
+      <h4>Recomendaciones:</h4>
+      <ul>
+        <li>Establecer acuerdos con proveedores para garantizar la disponibilidad de materiales críticos, como el Spindle Assy y el Wiper Motor Link.</li>
+        <li>Realizar un análisis detallado de los motivos detrás de los retrasos en los materiales más problemáticos, identificando si se deben a problemas de proveedores, almacenamiento o transporte.</li>
+        <li>Establecer un sistema de evaluación de desempeño para conductores y personal operativo, con incentivos para aquellos que cumplan o superen los objetivos de entrega.</li>
+        <li>Realizar revisiones periódicas del desempeño del personal a cargo dfe la planificación como conductores y proporcionar retroalimentación constructiva</li>
+        <li>Trabajar en estrecha colaboración con los proveedores para mejorar la puntualidad en la entrega de materiales y reducir los cuellos de botella en la cadena de suministro.</li>
+        <li>Desarrollar planes de contingencia para situaciones imprevistas, como huelgas, desastres naturales, calles cortadas y en mal estado o problemas técnicos, que puedan afectar la operación.</li>
+      </ul>
+
+
+</div>
+
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://github.com/Sebastianmvm"><i class="bx bxl-github"></i></a>
+            <a href="https://www.linkedin.com/in/sebastian-vargas-m/"><i class="bx bxl-linkedin-square"></i></a>
+            <!--<a href="#"><i class="bx bxl-instagram-alt"></i></a>-->
+            <!--<a href="#"><i class="bx bxl-twitter"></i></a>-->
+        </div>
+        <ul class="list">
+            <li><a href="index.html#services">Servicios</a></li>
+            <li><a href="index.html#about">Acerca de mí</a></li>
+            <li><a href="index.html#projects">Proyectos</a></li>
+            <li><a href="index.html#contact">Contáctame</a></li>
+        </ul>
+        <p class="copyright">© Sebastián Vargas | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <!-- Prism.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dax.min.js"></script>
+</body>
+</html>

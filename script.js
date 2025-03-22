@@ -111,7 +111,7 @@ const imagenesConFigma = [
 // Función para cambiar imágenes SIN FIGMA
 function cambiarImagenSinFigma(indice) {
   const imagen = imagenesSinFigma[indice - 1];
-  document.getElementById("imagen-mostrada").src = imagen.src; // Asegúrate de usar el ID correcto
+  document.getElementById("imagen-mostrada").src = imagen.src; 
   document.getElementById("descripcion-imagen").textContent = imagen.descripcion;
 }
 
@@ -120,4 +120,37 @@ function cambiarImagenConFigma(indice) {
   const imagen = imagenesConFigma[indice - 1];
   document.getElementById("imagen-mostrada-con-figma").src = imagen.src;
   document.getElementById("descripcion-imagen-con-figma").textContent = imagen.descripcion;
+}
+
+
+//Array con las rutas de las imagenes y sus dscripciones (SIN FIGMA) del proyecto 2
+
+const imagenesSinFigmaProyecto2 = [
+  { src: "IMG PROYECTO 1/PROYECTO 02 - Panel 1 sin figma.PNG", descripcion: "Análisis de Reservas"},
+  { src: "IMG PROYECTO 1/PROYECTO 02 - Panel 2 sin figma.PNG", descripcion: "Análisis de Transporte" },
+  { src: "IMG PROYECTO 1/PROYECTO 02 - Panel 3 sin figma.PNG", descripcion: "Análisis Operativo" }
+];
+
+//Array con las rutas de las imagenes y sus dscripciones (CON FIGMA) del proyecto 2
+
+const imagenesConFigmaProyecto2 = [
+  { src: "IMG PROYECTO 1/PROYECTO 02 - Panel 1 con figma.PNG", descripcion: "Análisis de Reservas"},
+  { src: "IMG PROYECTO 1/PROYECTO 02 - Panel 2 con figma.PNG", descripcion: "Análisis de Transporte" },
+  { src: "IMG PROYECTO 1/PROYECTO 02 - Panel 3 con figma.PNG", descripcion: "Análisis Operativo" }
+];
+
+// Función para cambiar imágenes SIN FIGMA del proyecto 2
+
+function cambiarImagenSinFigmaProyecto2(indice) {
+  const imagen = imagenesSinFigmaProyecto2[indice - 1];
+  document.getElementById("imagen-mostrada-proyecto2").src = imagen.src; 
+  document.getElementById("descripcion-imagen-proyecto2").textContent = imagen.descripcion;
+}
+
+// Función para cambiar imágenes CON FIGMA del proyecto 2
+
+function cambiarImagenConFigmaProyecto2(indice) {
+  const imagen = imagenesConFigmaProyecto2[indice - 1];
+  document.getElementById("imagen-mostrada-con-figma-proyecto2").src = imagen.src;
+  document.getElementById("descripcion-imagen-con-figma-proyecto2").textContent = imagen.descripcion;
 }

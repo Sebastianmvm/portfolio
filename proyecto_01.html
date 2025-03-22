@@ -80,7 +80,6 @@
             <h3>Diccionario origen de datos <code>'db_Request'</code></h3>
             <ul class="tecnologias-lista">
                 <li><strong>Request_ID</strong>: Identificador único de la solicitud.</li>
-        <li><strong>Process_Type</strong>: Tipo de proceso.</li>
         <li><strong>Customer_ID</strong>: Identificación única del cliente.</li>
         <li><strong>Customer_Name</strong>: Nombre del cliente.</li>
         <li><strong>Truck_ID</strong>: Identificación del camión asignado.</li>
@@ -95,14 +94,12 @@
         <li><strong>Status</strong>: Estado específico del pedido.</li>
         <li><strong>Reason</strong>: Motivo del estado registrado.</li>
         <li><strong>Quantity</strong>: Cantidad de paquetes en la solicitud.</li>
-        <li><strong>Package_Type</strong>: Tipo de paquete transportado.</li>
         <li><strong>Arrival_Date</strong>: Fecha de llegada a la ubicación.</li>
         <li><strong>Arrival_Time</strong>: Hora exacta de llegada.</li>
         <li><strong>Transit_Date</strong>: Fecha en la que inicia el tránsito.</li>
         <li><strong>Transit_Time</strong>: Hora en la que inicia el tránsito.</li>
         <li><strong>Ready_Date</strong>: Fecha en la que el pedido está listo.</li>
         <li><strong>Ready_Time</strong>: Hora en la que el pedido está listo.</li>
-        <li><strong>Distance</strong>: Distancia recorrida en la operación.</li>
         <li><strong>Georeference</strong>: Ubicación geográfica respecto a la zona definida.</li>
         <li><strong>Request_Type</strong>: Tipo de solicitud.</li>
             </ul>
@@ -301,7 +298,7 @@ Operational Exceptions = COUNTROWS(
 
             <!-- Creación de Medidas de Porcentajes -->
             <div class="paso">
-                <h4>3. Creación de Medidas de Porcentajes</h4>
+                <h4>3. Creación de Medidas para Porcentajes</h4>
                 <p>Para complementar el análisis, creé una segunda tabla de medidas (<code>T_Metrics % db_request</code>) que calcula porcentajes basados en las métricas anteriores. Esto permite entender la proporción de solicitudes en cada estado respecto al total.</p>
                 <pre><code class="language-dax">
 % State Ready = [State Ready] / [Total Request Count]
