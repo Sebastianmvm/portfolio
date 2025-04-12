@@ -1,8 +1,8 @@
 # **Portafolio Web Personal**
 
-Bienvenido a mi portafolio personal, diseñado para mostrar mi experiencia como Ingeniero en Logística y mis proyectos en análisis de datos, visualización y machine learning. Este sitio refleja mi combinación de habilidades logísticas y tecnológicas, así como mi crecimiento continuo en el ámbito del análisis de datos.
+Bienvenido a mi portafolio personal, diseñado para mostrar mi experiencia como Ingeniero en Logística y mis proyectos en análisis y visualización de datos. Este sitio refleja mi combinación de habilidades logísticas y tecnológicas, así como mi crecimiento continuo en el ámbito del análisis de datos.
 
-## **Tecnologías Utilizadas**
+## **Tecnologías Utilizadas para esta web**
 - **HTML5**: Para estructurar y organizar el contenido de manera clara y accesible.
 - **CSS3**: Para diseñar un estilo moderno, atractivo y responsivo.
 - **JavaScript**: Para añadir interactividad y dinamismo al sitio.
