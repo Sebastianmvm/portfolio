@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Operaciones Financieras</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+        <!-- Encabezado -->
+        <header class="header">
+            <a href="index.html" class="logo">Sebastián<span> Vargas</span></a>
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <nav class="navbar">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Acerca de mí</a>
+                <a href="index.html#services">Servicios</a>
+                <a href="index.html#projects">Proyectos</a>
+                <!--<a href="index.html#contact">Contáctame</a>-->
+            </nav>
+            <!--<button class="gradient-btn">Contáctame</button>-->
+        </header>
+
+       
+
+
+        <!-- Sección del Proyecto -->
+        <section class="proyecto">
+            <h2 class="heading">Proyecto 3 - Operaciones Financieras</h2>
+
+            <p>En este escenario, analizarás las operaciones financieras de una 
+                empresa SaaS (Software como Servicio) dinámica utilizando datos 
+                estructurados del mundo real. El conjunto de datos contiene dos 
+                perspectivas esenciales: los resultados financieros reales 
+                registrados a lo largo del tiempo y las expectativas 
+                presupuestarias originales establecidas por la empresa.</p>
+
+                    <!-- Objetivos del Proyecto -->
+                <div class="objetivos">
+                    <h3>🎯 Objetivos del Proyecto</h3>
+                    <div class="objetivo">
+                        <h4>A. Resumen financiero y rendimiento.</h4>
+                        <p>1️⃣A lo largo del año, ¿gastó la empresa más o menos de lo planeado?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        
+                        <p>2️⃣¿La empresa fue rentable cada mes o los gastos superaron los ingresos en algún momento?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        
+                        <p>3️⃣¿Qué categorías o cuentas muestran la diferencia más significativa entre el presupuesto y las cifras reales?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>B. Información sobre ingresos.</h4>
+                        <p>4️⃣¿Cuáles son las principales fuentes de ingresos y cuál genera la mayor cantidad de ingresos?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        
+                        <p>5️⃣¿Cómo cambian los ingresos con el tiempo? ¿Hay picos o desaceleraciones estacionales?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        
+                        <p> 6️⃣¿Qué clientes o acuerdos generaron los pagos individuales más altos?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>C. Información sobre gastos.</h4>
+                        <p>7️⃣¿Cuáles son las 5 principales categorías de gasto por monto total?</p>
+                        
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        
+                        <p>8️⃣¿Qué proveedores o proveedores de servicios (p. ej., AWS, Stripe) recibieron la mayor cantidad de dinero en general?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        <h4>D. Tendencias y patrones.</h4>
+                        <p>9️⃣¿Existen patrones mensuales o estacionales que se repitan en los ingresos o los gastos?</p>
+                    </div>
+                    <br>
+                    <div class="objetivo">
+                        
+                        <p>🔟¿Qué meses muestran la mejor alineación entre las cifras presupuestadas y las reales?</p>
+                    </div>
+                </div>
+
+
+                <!-- Tecnologías y Herramientas -->
+                <div class="tecnologias">
+                    <h3>Tecnología y Herramientas</h3>
+                    <ul class="tecnologias-lista">
+                        <!--<li><strong>Python</strong>: Para la automatización de procesos, análisis de datos y desarrollo de scripts personalizados.</li>-->
+                        <!--<li><strong>Pandas (framework)</strong>: Para manipular, limpiar y transformar datos.</li>--> 
+                        <!--<li><strong>Math (framework)</strong>: Lo utilizaré para calcular distancias geográficas con el método de Haversine.</li>-->
+                        <!--<li><strong>Matplotlib (framework)</strong>: Para la creación de gráficos y visualizaciones personalizadas que representen datos de manera clara.</li> -->
+                        <li><strong>Excel</strong>: Para la revisión y análisis de la consistencia de los datos, además de su uso como fuente de datos inicial.</li>
+                        <li><strong>Power Query</strong>: Para la limpieza, integración y transformación de datos provenientes de distintas fuentes.</li>
+                        <li><strong>Power BI</strong>: Para la creación de dashboards interactivos y la visualización eficaz de datos clave.</li>
+                        <li><strong>Figma</strong>: Para diseñar reportes y visualizaciones con un enfoque profesional y corporativo.</li>
+                    </ul>
+                </div>
+      
+
+<!-- Explicación de las Columnas de la Base Principal -->
+<div class="tecnologias">
+    <h3>Diccionario origen de datos <code>'Finance'</code></h3>
+    <ul class="tecnologias-lista">
+        <ul class="lista-detallada">
+            <li><strong>CLASE: General & Administrative</strong>: Administración general (costos administrativos y gestión interna).</li>
+            <li><strong>CLASE: Research & Development</strong>: Investigación y desarrollo (innovación y creación de nuevos productos o tecnologías).</li>
+            <li><strong>CLASE: Sales & Marketing</strong>: Ventas y marketing (estrategias para vender productos y promocionar la marca).</li>
+            <li><strong>CLASE: Customer Support</strong>: Atención al cliente (servicio y asistencia postventa para clientes).</li>
+
+            <li><strong>NIVEL_01: Income</strong>: Ingresos (dinero que una empresa gana por sus actividades comerciales).</li>
+            <li><strong>NIVEL_01: Other Income</strong>: Otros ingresos (dinero generado por actividades no principales, como inversiones o intereses).</li>
+            <li><strong>NIVEL_01: Cost of Goods Sold</strong>: Costo de bienes vendidos (gastos directos para producir o adquirir los productos vendidos).</li>
+            <li><strong>NIVEL_01: Operating Expenses</strong>: Gastos operativos (costos administrativos, salarios, renta, y otros gastos necesarios para operar el negocio).</li>
+            <li><strong>NIVEL_01: Other Expense</strong>: Otros gastos (costos que no están directamente relacionados con la operación principal, como intereses o pérdidas extraordinarias).</li>
+
+            <li><strong>TIPO_TRANSACCIÓN: Invoice</strong>: Factura → Documento que solicita un pago por bienes o servicios vendidos.</li>
+            <li><strong>TIPO_TRANSACCIÓN: Deposit</strong>: Depósito → Dinero ingresado en una cuenta bancaria, ya sea por ventas, inversiones o financiación.</li>
+            <li><strong>TIPO_TRANSACCIÓN: Bill</strong>: Cuenta por pagar → Registro de una deuda o pago pendiente que debe realizar una empresa.</li>
+            <li><strong>TIPO_TRANSACCIÓN: Expense</strong>: Gasto → Costo incurrido en operaciones, como alquiler, suministros o servicios.</li>
+            <li><strong>TIPO_TRANSACCIÓN: Journal Entry</strong>: Asiento contable → Registro de una transacción en el libro contable, afectando cuentas específicas.</li>
+
+            <li><strong>NIVEL_02: Non Recurring Income</strong>: Ingresos no recurrentes (ganancias excepcionales que no ocurren regularmente, como ventas de activos).</li>
+            <li><strong>NIVEL_02: Recurring Income</strong>: Ingresos recurrentes (ingresos constantes, como suscripciones o contratos de largo plazo).</li>
+            <li><strong>NIVEL_02: Other Income</strong>: Otros ingresos (ganancias secundarias no relacionadas con la actividad principal del negocio).</li>
+            <li><strong>NIVEL_02: Product COGS</strong>: Costo de bienes vendidos de productos (gastos directos en la fabricación o compra de productos vendidos).</li>
+            <li><strong>NIVEL_02: SaaS COGS</strong>: Costo de bienes vendidos de SaaS (costos directos asociados a servicios de software como suscripciones).</li>
+            <li><strong>NIVEL_02: Advertising & Marketing</strong>: Publicidad y marketing (gastos en campañas, anuncios y estrategias promocionales).</li>
+            <li><strong>NIVEL_02: Other G&A</strong>: Otros gastos administrativos y generales (costos operativos no directamente relacionados con producción).</li>
+            <li><strong>NIVEL_02: Payroll</strong>: Nómina (gastos en salarios y beneficios para empleados).</li>
+            <li><strong>NIVEL_02: Professional Fees</strong>: Honorarios profesionales (pagos a consultores, abogados, contadores y otros servicios profesionales).</li>
+            <li><strong>NIVEL_02: Travel & Entertainment</strong>: Viajes y entretenimiento (gastos en desplazamientos, eventos y actividades para clientes o empleados).</li>
+            <li><strong>NIVEL_02: Other Expense</strong>: Otros gastos (costos adicionales que no entran en otras categorías principales).</li>
+        </ul>
+    </ul>
+</div>
+
+ <!-- Proceso de Creación del Modelo -->
+        <div class="proceso">
+            <h3>Proceso de Creación del Modelo</h3>
+            
+            <!-- Paso 1 -->
+            <div class="paso">
+                <h4>Paso 1: Importación de Datos</h4>
+                <div class="contenido-paso">
+                    
+                    <p>Importamos archivo crudo e iremos a Power Query para transformar algunos de sus campos.</p>
+                         <br>
+                         <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 4 01. Carga de archivo y selección de tablas.JPG" alt="Carga de Datos y selección de tablas en Power BI">
+                </div>
+            </div>
+
+
+            <!-- Paso 2 -->
+            <div class="paso">
+                <h4>Paso 2: Modificación de Campos</h4>
+                <div class="contenido-paso">
+                
+                    <p>En Power Query duplicamos tabla Fact_Transactions y la renombramos Dim_TIPO_TRANSACCION</p>
+                        <br>
+                        <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 4 02. Creacion DIM_TIPO_TRANSACCION.JPG" alt="Crear tabla DIM_TIPO_TRANSACCION">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.1 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>Una vez duplicada la tabla Fact_Transactions, seleccionamos solo la columna TIPO_TRANSACCIÓN y eliminamos duplicados .
+                    </p>
+                    <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 4 03. ELEGIMOS LA COLUMNA PARA  DIM_TIPO_TRANSACCION.JPG" alt="Elegimos la columna para DIM_TIPO_TRANSACCION">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.2 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>A continuación creamos la relación de 1 a varios entre Dim_TIPO_TRANSACCION y Fact_Transactions</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 4 05. CREAMOS LA LA RELACIÓN DE 1 A VARIOS.JPG" alt="Creamos la relación de 1 a varios entre Dim_TIPO_TRANSACCION y Fact_Transactions">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.3 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>Luego Creamos la relación de 1 a varios entre Dim_ACCOUNT y Fact_Transactions</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 4 06. CREAMOS LA LA RELACIÓN DE 1 A VARIOS DIM ACOUNT Y FACT TRANSACCION.JPG" alt="Creamos la relación de 1 a varios entre Dim_ACCOUNT y Fact_Transactions">
+                    
+                </div>
+            </div>
+
+            <!-- Paso 2.4 -->
+            <div class="paso">
+                <div class="contenido-paso">
+                    <p>También debemos crear la relación de 1 a varios entre Dim_ACCOUNT y Fact_Budget</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 4 07. CREAMOS LA LA RELACIÓN DE 1 A VARIOS DIM ACOUNT Y FACT BUDGET.JPG" alt="Creamos la relación de 1 a varios entre Dim_ACCOUNT y Fact_Budget">
+                    
+                </div>
+            </div>
+            
+            <!-- Paso 2.5 -->
+            <!--<div class="paso">
+                <div class="contenido-paso">
+                    <p>Y por último creamos la relación de 1 a varios entre Dim_CALENDARIO y Fact_Transactions porque la fecha de transacción es un campo clave en las transacciones financieras</p>
+                    <br>
+                    <img src="IMG PROYECTO 1/PROYECTO 4 08. CREAMOS LA LA RELACIÓN DE 1 A VARIOS DIM CALENDARIO Y FACT TRANSACTION.JPG" alt="Creamos la relación de 1 a varios entre Dim_CALENDARIO y Fact_Transactions porque la fecha de transacción es un campo clave en las transacciones financieras">
+                    
+                </div>
+            </div>-->
+
+
+        </div>    
+
+        <!-- Tabla Calendario, Medidas y Fórmulas DAX -->
+        <div class="tecnologias">
+            <h3>Tabla Calendario, Medidas y Fórmulas DAX</h3>
+            
+            <!-- Creación de la Tabla Calendario -->
+            <div class="paso">
+                <h4>1. Creación de la Tabla Calendario</h4>
+                <p>Para facilitar el análisis temporal, creé una tabla de calendario (<code>Dim_CALENDARIO</code>) que contiene fechas iterativas basadas en el rango de fechas de la tabla <code>Dataset_Finance</code>. Luego, agregué columnas adicionales para desglosar la fecha en componentes útiles como día, mes, año, semestre y semana.</p>
+                <pre><code class="language-dax">
+    Dim_Calendario = CALENDAR(
+                        MIN(Fact_Transactions[FECHA]),
+                        MAX(Fact_Transactions[FECHA]))
+                </code></pre>
+
+                <p>Columnas adicionales:</p>
+                <pre><code class="language-dax">
+    Año = YEAR(Dim_Calendario[Fecha])
+    Mes = MONTH(Dim_Calendario[Date])
+    Día N° = DAY(Dim_Calendario[Date])
+    Mes Nombre = FORMAT(Dim_Calendario[Date]), "mmmm")
+    Día Nombre = FORMAT(Dim_Calendario[Date]), "dddd") 
+    Semestre = IF(MONTH([Date]) <= 6, 1, 2)
+    Día Numérico = WEEKDAY(Dim_Calendario[Date], 2)
+                </code></pre>
+            </div>
+
+            <!-- Creación de Medidas para Dataset_Finance -->
+<div class="paso">
+    <h4>2. Creación de Medidas para <code>Dataset_Finance</code></h4>
+    <p>Se creó una tabla de medidas (<code>Tabla Medidas</code>) para calcular métricas clave relacionadas con ingresos, gastos, presupuestos y rentabilidad en base a las tablas <code>Fact_Transactions</code>, <code>Fact_Budget</code> y <code>Dim_Calendario</code>.</p>
+    <pre><code class="language-dax">
+Trans_Ingresos_Reales = 
+CALCULATE(
+    SUM(Fact_Transactions[MONTO]),
+    Fact_Transactions[INGRESOS/GASTOS] = "REVENUE"
+)
+
+Trans_Gastos_Reales = 
+CALCULATE(
+    SUM(Fact_Transactions[MONTO]),
+    Fact_Transactions[INGRESOS/GASTOS] = "EXPENSES"
+)
+
+Total Transacciones = COUNT(Fact_Transactions[CÓDIGO_CUENTA])
+
+Budget_Ingresos = 
+CALCULATE(
+    SUM(Fact_Budget[PRESUPUESTO]),
+    Fact_Budget[INGRESOS/GASTOS] = "REVENUE"
+)
+
+Budget_Gastos = 
+CALCULATE(
+    SUM(Fact_Budget[PRESUPUESTO]),
+    Fact_Budget[INGRESOS/GASTOS] = "EXPENSES"
+)
+
+__Rentabilidad_Neta = [Trans_Ingresos_Reales] - [Trans_Gastos_Reales]
+
+Rentabilidad_Presupuestada = [Budget_Ingresos] - [Budget_Gastos]
+
+Rentabilidad Acumulada = 
+CALCULATE(
+    [__Rentabilidad_Neta],
+    FILTER(
+        ALLSELECTED(Dim_Calendario),
+        Dim_Calendario[Fecha] > MAX(Dim_Calendario[Fecha])
+    )
+)
+
+Diferencia_Ingresos_vs_Presupuesto = [Trans_Ingresos_Reales] - [Budget_Ingresos]
+
+Diferencia_Gastos_vs_Presupuesto = [Trans_Gastos_Reales] - [Budget_Gastos]
+
+__Rentabilidad Neta PY = 
+CALCULATE(
+    [__Rentabilidad_Neta],
+    SAMEPERIODLASTYEAR(Dim_Calendario[Fecha])
+)
+
+__Ingresos Reales PY = 
+CALCULATE(
+    [Trans_Ingresos_Reales],
+    SAMEPERIODLASTYEAR(Dim_Calendario[Fecha])
+)
+
+__Gastos Reales PY = 
+CALCULATE(
+    [Trans_Gastos_Reales],
+    SAMEPERIODLASTYEAR(Dim_Calendario[Fecha])
+)
+
+    </code></pre>
+</div>
+
+
+
+                        <!-- Sección para mostrar imágenes de las relaciones -->
+<div class="seccion-imagenes">
+    <h3 class="panel-titulo">Relaciones entre Orígenes de Datos</h3>
+    
+    <!-- Descripción de las relaciones -->
+    <div class="descripcion-relaciones">
+        <p>
+            El modelo de datos lo conectamos con nuestra Tabla Calendario para analizar los datos de la tabla <code>Dataset_Finance</code> en base al tiempo.
+            
+        </p>
+        <ul>
+            <li>La tabla <strong>Dataset_Finance</strong> se relaciona con <strong>Dim_CALENDARIO</strong> a través del campo <em>Fecha</em> de muchos a uno</li>
+        </ul>
+        <br>
+    
+    </div>
+    
+    <!-- Agregando la imagen de las relaciones -->
+    <div class="imagen-relaciones">
+        <img src="IMG PROYECTO 1/PROYECTO 4 09 relaciones.JPG" alt="Relaciones en Power BI" 
+             style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
+        <!--<p style="text-align: center; font-style: italic; margin-top: 8px;">
+            Relaciones creadas en Power BI: explicando cómo se conectan los datos.
+        </p> -->
+    </div>
+
+    
+</div>
+
+            <!-- Sección para las Imágenes SIN FIGMA -->
+            <!--<div class="seccion-imagenes">
+                <h3 class="panel-titulo">Visualizaciones en Power BI (SIN FIGMA)</h3>
+                <p>Aquí mostraré algunas imagenes de los paneles creados a partir de las de las medidas creadas anteriormente, 
+                    pero los paneles finales los mostraré una vez que los alla personalizado con FIGMA para finalizar con una 
+                    Historytelling con todo lo visto.</p>
+
+                <!-- Botones para cambiar las imágenes -->
+                <!--<div class="botones-paneles">
+                    <button class="boton-panel" onclick="cambiarImagenSinFigmaProyecto2(1)">Panel 1</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigmaProyecto2(2)">Panel 2</button>
+                    <button class="boton-panel" onclick="cambiarImagenSinFigmaProyecto2(3)">Panel 3</button>
+                </div>
+
+                <!-- Contenedor de la imagen actual -->
+                <!--<div class="imagen-actual">
+                    <img id="imagen-mostrada-proyecto2" src="IMG PROYECTO 1/PROYECTO 02 - Panel 1 sin figma.PNG" alt="Visualización 1">
+                    <p id="descripcion-imagen-proyecto2">Análisis de Reservas .</p>
+                </div>
+            
+            </div>
+
+            <!-- Sección para las Imágenes CON FIGMA -->
+            <!--<div class="seccion-imagenes">
+                <h3 class="panel-titulo">Visualizaciones en Power BI (CON FIGMA)</h3>
+                <p>Aquí mostraré los los diseños que he creado con figma para crear un impacto visual mas potente de los dashboard que he creado. Los dashboard 
+                    y paneles de mando estaran en la siguiente publicación.</p>
+
+                <!-- Botones para cambiar las imágenes -->
+                <!--<div class="botones-paneles">
+                    <button class="boton-panel" onclick="cambiarImagenConFigmaProyecto2(1)">Panel 1</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigmaProyecto2(2)">Panel 2</button>
+                    <button class="boton-panel" onclick="cambiarImagenConFigmaProyecto2(3)">Panel 3</button>
+                </div>
+
+
+
+                <!-- Contenedor de la imagen actual -->
+                 <!--<div class="imagen-actual">
+                    <img id="imagen-mostrada-con-figma-proyecto2" src="IMG PROYECTO 1/PROYECTO 02 - Panel 1 con figma.PNG" alt="Visualización 1">
+                    <p id="descripcion-imagen-con-figma-proyecto2">Descripción inicial de la sección CON FIGMA.</p>
+                </div>
+
+            </div>-->
+
+
+                      
+            <!-- Sección para la publicación del proyecto -->
+            <div class="seccion-imagenes">
+                <h3 class="panel-titulo">Proyecto Power BI - Publicación</h3>
+                <br>
+                <p>
+                    <!-- Enlace estilizado para mejor visibilidad -->
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiYjBhZjVkYjgtMTUwNy00NTg3LTljNmEtNWYwOGRmMjk4ZjNiIiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9" 
+                    style="color: #0056b3; font-weight: bold; text-decoration: underline;" 
+                    target="_blank" rel="noopener noreferrer">
+                    LINK: Visita el proyecto Power BI aquí
+                    </a>
+                </p>
+                <br>
+                
+                <!-- Incrustación del informe -->
+                <div class="iframe-container">
+                    <iframe title="Proyecto_01_CON_FIGMA" width="1024" height="612" 
+                            src="https://app.powerbi.com/view?r=eyJrIjoiYjBhZjVkYjgtMTUwNy00NTg3LTljNmEtNWYwOGRmMjk4ZjNiIiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9" 
+                            frameborder="0" allowfullscreen="true">
+                    </iframe>
+                </div>
+            </div>
+
+
+           <!-- Sección para conclusiones de los insight detectados -->
+<div class="tecnologias">
+    <h3 class="panel-titulo">Conclusiones del Análisis Financiero</h3>
+    
+    <!-- Panel 1: Evolución de la Rentabilidad -->
+    <h4>Panel 1: Evolución de la Rentabilidad</h4>
+    <ul class="tecnologias-lista">
+        <li><strong>Transformación de la Rentabilidad:</strong> La empresa ha pasado de pérdidas significativas (-$385,200 en el primer año, -$1,363,200 en el segundo año) a lograr una rentabilidad positiva de $299,900 en el tercer año. Esto representa una mejora del 122% respecto al año anterior, alcanzando una rentabilidad del 3.46%.</li>
+        
+        <li><strong>Análisis de Tendencia:</strong> Se identifica una clara tendencia ascendente en la rentabilidad mensual durante el último año, con los últimos 6 meses mostrando resultados consistentemente positivos.</li>
+        
+        <li><strong>Comparación con Presupuesto:</strong> La rentabilidad alcanzada supera las proyecciones presupuestarias, demostrando un desempeño financiero mejor de lo esperado.</li>
+
+        <li><strong>Factores Clave de Mejora:</strong> Esta transformación hacia la rentabilidad se debe principalmente a:
+            <ul>
+                <li>Crecimiento sostenido de ingresos (42.10% en el último año)</li>
+                <li>Control efectivo de gastos (6.92% por debajo del presupuesto)</li>
+                <li>Maduración del modelo de suscripción SaaS</li>
+            </ul>
+        </li>
+    </ul>
+      
+
+    <p>
+        La evolución de la rentabilidad demuestra que la empresa ha superado exitosamente el "valle de la muerte" típico de las startups SaaS, 
+        donde las inversiones iniciales y los costos de adquisición de clientes suelen generar pérdidas en los primeros años. 
+        La tendencia positiva indica que el modelo de negocio está madurando y comenzando a generar beneficios, 
+        lo que sugiere que la empresa está en camino hacia la sostenibilidad financiera a largo plazo.
+    </p>
+      
+
+    <h4>Recomendaciones:</h4>
+    <ul>
+        <li>Analizar qué estrategias específicas contribuyeron a este cambio positivo para reforzarlas.</li>
+        <li>Comunicar este hito a inversores y stakeholders para generar confianza.</li>
+        <li>Desarrollar un plan de reinversión de beneficios para acelerar el crecimiento.</li>
+    </ul>
+
+      
+
+      
+
+
+    <!-- Panel 2: Análisis de Ingresos -->
+    <h4>Panel 2: Análisis de Ingresos</h4>
+    <ul class="tecnologias-lista">
+        <li><strong>Crecimiento Sostenido:</strong> Los ingresos totales muestran un crecimiento constante y significativo:
+            <ul>
+                <li><strong>Año 1:</strong> $3,177,870</li>
+                <li><strong>Año 2:</strong> $6,105,200 (incremento del 92.12%)</li>
+                <li><strong>Año 3:</strong> $8,675,400 (incremento adicional del 42.10%)</li>
+            </ul>
+        </li>
+        <li><strong>Superación de Objetivos:</strong> Los ingresos reales han superado consistentemente los presupuestados, con un cumplimiento del 4.52% por encima del presupuesto en el último año ($8,675,400 vs $8,300,000).</li>
+        <li><strong>Composición de Ingresos:</strong> El modelo SaaS representa el 83% del total de ingresos ($7.20M de $8.68M), confirmando que la estrategia de suscripción es el motor principal del negocio.</li> 
+        <li><strong>Distribución por Cliente:</strong> GlobalTech sigue siendo el cliente principal con $2.24M anuales, mientras que el segmento de pequeñas y medianas empresas aporta $1.45M, mostrando una diversificación saludable pero con cierta dependencia de clientes clave.</li>
+    </ul>
+      
+
+    <p>
+        El análisis de ingresos revela un crecimiento robusto y sostenido que confirma la validez del modelo de negocio SaaS. 
+        La capacidad para superar consistentemente las proyecciones presupuestarias demuestra tanto el crecimiento de la demanda 
+        de los servicios como la efectividad del equipo de ventas. La predominancia de los ingresos recurrentes por suscripción 
+        proporciona estabilidad y previsibilidad financiera, características altamente valoradas en empresas SaaS.
+    </p>
+      
+
+    <h4>Recomendaciones:</h4>
+    <ul>
+        <li>Revisar al alza las proyecciones de ingresos para el próximo año.</li>
+        <li>Desarrollar estrategias para aumentar la penetración en el segmento de medianas empresas.</li>
+        <li>Diversificar la base de clientes para reducir la dependencia de GlobalTech.</li>
+    </ul>
+
+      
+
+      
+
+
+    <!-- Panel 3: Análisis de Gastos -->
+    <h4>Panel 3: Análisis de Gastos</h4>
+
+    <ul class="tecnologias-lista">
+        <li><strong>Control Efectivo de Gastos:</strong> En el último año, los gastos actuales ($8,375,500) fueron un 6.92% inferiores a lo presupuestado ($8,997,695), generando un ahorro de $622,195.</li>
+        <li><strong>Evolución de Gastos:</strong> Los gastos han crecido a un ritmo más controlado que los ingresos:
+          <ul>
+            <li><strong>Año 1:</strong> $3,563,070</li>
+            <li><strong>Año 2:</strong> $7,468,400 (incremento del 109.61%)</li>
+            <li><strong>Año 3:</strong> $8,375,500 (incremento del 12.15%)</li>
+          </ul>
+        </li>
+        <li><strong>Distribución de Gastos:</strong> Las principales categorías de gasto son:
+          <ul>
+            <li><strong>Salarios y compensaciones:</strong> $3.67M (43.8% del total)</li>
+            <li><strong>Costos de producto:</strong> $1.02M (12.2% del total)</li>
+            <li><strong>Seguros de salud:</strong> $664.80K (7.9% del total)</li>
+          </ul>
+        </li>
+        <li><strong>Eficiencia Operativa:</strong> La relación gastos/ingresos ha mejorado significativamente, pasando del 112% en el primer año (operando a pérdida) al 96.5% en el último año, demostrando una mayor eficiencia operativa.</li>
+      </ul>
+        
+
+      <p>
+        El análisis de gastos demuestra una disciplina financiera efectiva y una gestión prudente de los recursos. 
+        La capacidad de mantener los gastos por debajo del presupuesto mientras se impulsa el crecimiento es un indicador 
+        de escalabilidad del modelo de negocio, característica muy valorada en empresas SaaS. La distribución de gastos 
+        es típica de empresas de software, con una alta inversión en talento humano, que constituye el activo principal.
+      </p>
+        
+
+      <h4>Recomendaciones:</h4>
+      <ul>
+        <li>Mantener la disciplina presupuestaria que ha demostrado ser efectiva.</li>
+        <li>Analizar oportunidades de optimización adicional en categorías de gasto no esenciales.</li>
+        <li>Considerar inversiones estratégicas en automatización que puedan reducir costos operativos.</li>
+      </ul>
+</div>
+
+
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://github.com/Sebastianmvm"><i class="bx bxl-github"></i></a>
+            <a href="https://www.linkedin.com/in/sebastian-vargas-m/"><i class="bx bxl-linkedin-square"></i></a>
+            <!--<a href="#"><i class="bx bxl-instagram-alt"></i></a>-->
+            <!--<a href="#"><i class="bx bxl-twitter"></i></a>-->
+        </div>
+        <ul class="list">
+            <li><a href="index.html#services">Servicios</a></li>
+            <li><a href="index.html#about">Acerca de mí</a></li>
+            <li><a href="index.html#projects">Proyectos</a></li>
+            <!--<li><a href="index.html#contact">Contáctame</a></li>-->
+        </ul>
+        <p class="copyright">© Sebastián Vargas 2025 | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <!-- Prism.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dax.min.js"></script>
+</body>
+</html>

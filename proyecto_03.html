@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimización de Flota - Primera Milla</title>
+    <title>Análisis de Inventarios</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <!-- Prism.js CSS -->
@@ -105,6 +105,198 @@
                     </div>
                 </div>
 
+                 <!-- Tecnologías y Herramientas -->
+            <div class="tecnologias">
+                <h3>Tecnología y Herramientas</h3>
+                <ul class="tecnologias-lista">
+                    <li><strong>Excel</strong>: Para la revisión y análisis de la consistencia de los datos, además de su uso como fuente de datos inicial.</li>
+                    <li><strong>Power Query</strong>: Para la limpieza, integración y transformación de datos provenientes de distintas fuentes.</li>
+                    <li><strong>Power BI</strong>: Para la creación de dashboards interactivos y la visualización eficaz de datos clave.</li>
+                    <li><strong>Figma</strong>: Para diseñar reportes y visualizaciones con un enfoque profesional y corporativo.</li>
+                </ul>
+            </div>
+
+            
+       
+            <!-- Explicación de las Columnas de la Base Principal -->
+            <div class="tecnologias">
+                <h3>Diccionario origen de datos <code>'db_logistica'</code></h3>
+                <ul class="tecnologias-lista">
+                    <ul class="lista-detallada">
+                        <li><strong>Proveedor GPS</strong>: Proveedor de GPS que rastrea el vehículo.</li>
+                        <li><strong>ID de Reserva</strong>: Identificador único para cada reserva.</li>
+                        <li><strong>Tipo de Envío</strong>: Indica si el envío es de mercado (reserva puntual) o regular (viaje basado en contrato).</li>
+                        <li><strong>Fecha de Reserva</strong>: La fecha y hora en que se creó la reserva.</li>
+                        <li><strong>Matrícula del Vehículo</strong>: El número de registro único del vehículo utilizado para el transporte.</li>
+                        <li><strong>Ubicación de Origen</strong>: El punto inicial desde donde comienza el envío.</li>
+                        <li><strong>Ubicación de Destino</strong>: El destino final donde se entregará el envío.</li>
+                        <li><strong>Latitud de Origen</strong>: Latitud de la ubicación de origen.</li>
+                        <li><strong>Longitud de Origen</strong>: Longitud de la ubicación de origen.</li>
+                        <li><strong>Latitud de Destino</strong>: Latitud de la ubicación de destino.</li>
+                        <li><strong>Longitud de Destino</strong>: Longitud de la ubicación de destino.</li>
+                        <li><strong>Hora de Ping de Datos</strong>: La marca de tiempo del último ping de datos GPS registrado del vehículo.</li>
+                        <li><strong>ETA Planificada</strong>: La hora estimada de llegada al destino según el plan de viaje.</li>
+                        <li><strong>Ubicación Actual</strong>: La ubicación más reciente conocida del vehículo.</li>
+                        <li><strong>ETA Real</strong>: La hora real de llegada al destino.</li>
+                        <li><strong>Latitud de Ubicación Actual</strong>: La latitud de la ubicación actual del vehículo.</li>
+                        <li><strong>Longitud de Ubicación Actual</strong>: La longitud de la ubicación actual del vehículo.</li>
+                        <li><strong>A Tiempo</strong>: Indica si el vehículo llegó a tiempo (Sí/No).</li>
+                        <li><strong>Fecha de Inicio del Viaje</strong>: La fecha y hora reales de inicio del viaje.</li>
+                        <li><strong>Fecha de Fin del Viaje</strong>: La fecha y hora estimadas de llegada.</li>
+                        <li><strong>Distancia de Transporte (KM)</strong>: La distancia total recorrida por el vehículo durante el viaje en kilómetros.</li>
+                        <li><strong>Tipo de Vehículo</strong>: El tipo de vehículo utilizado para el envío (ej., camión de 32 pies, Tata Ace, multi-eje).</li>
+                        <li><strong>Kilómetros Mínimos a Cubrir por Día</strong>: La distancia mínima que se espera que el vehículo cubra en un solo día.</li>
+                        <li><strong>Nombre del Conductor</strong>: El nombre del conductor asignado al viaje.</li>
+                        <li><strong>Número de Móvil del Conductor</strong>: El número de contacto del conductor.</li>
+                        <li><strong>Nombre del Cliente</strong>: El nombre del cliente que recibe el envío.</li>
+                        <li><strong>Nombre del Proveedor</strong>: El nombre del proveedor que envía el envío.</li>
+                        <li><strong>Material Enviado</strong>: Una descripción de los materiales transportados en el envío.</li>
+                    </ul>
+                </ul>
+            </div>
+
+        
+          
+
+            
+        
+            <!-- Análisis Exploratorio de Datos (EDA) -->
+        <div class="proceso">
+            <h3>Análisis Exploratorio de Datos (EDA)</h3>
+            
+            <!-- Paso 1 -->
+            <div class="paso">
+                <h4>Paso 1: Carga y Exploración Inicial de Datos</h4>
+                <ul class="tecnologias-lista">
+                    <li>Importamos librerías.</li>
+                    <li>Carga del dataset desde un archivo Excel.</li>
+                    <li>Exploración inicial.</li>
+                </ul>
+               
+            </div>
+
+            <pre>
+                <code class="language-dax">
+     # Importar librerías
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        from math import radians, sin, cos, sqrt, atan2          
+                </code>
+            </pre>
+
+            <pre>
+                <code class="language-dax">
+    # Cargar el archivo Excel
+        file_path = 'Transportation & Logistics Tracking Dataset_Spanish.xlsx'
+        df = pd.read_excel(file_path, sheet_name='Datos Primarios')        
+                </code>
+            </pre>
+
+            <pre>
+                <code class="language-dax">
+    # Exploración inicial de los datos
+        df.head()
+        df.info()   
+                </code>
+            </pre>
+
+            <pre>
+                <img src="IMG PROYECTO 1/df.info.PNG" alt="df.info()">
+            </pre>
+
+            <pre>
+                <code class="language-dax">
+    # Verificar valores nulos, NA y celdas vacías
+    null_values = df.isnull().sum()
+    na_values = df.isna().sum()
+    empty_values = (df == '').sum()
+    
+    # Mostrar el resumen de valores nulos, NA y celdas vacías
+    print("Valores nulos por columna:")
+    print(null_values)
+    print("\nValores NA por columna:")
+    print(na_values)
+    print("\nCeldas vacías por columna:")
+    print(empty_values)
+                </code>
+            </pre>  
+            <pre>
+                <img src="IMG PROYECTO 1/df.isnull().sum().PNG" alt="df.isnull()">
+            </pre>
+            
+            <div class="paso">
+                <h4>Paso 2: Transformación de datos</h4>
+                <p>Al detectar campos con datatype incorresctos y valores vacíos como nulos procederé a modificarlos.
+
+                </p>
+        </div>
+
+            <pre>
+                <code class="language-dax">
+    # Convertir formatos de fecha
+    df['ETA Real'] = pd.to_datetime(df['ETA Real'], errors='coerce')
+    df['ETA Planificada'] = pd.to_datetime(df['ETA Planificada'], errors='coerce')
+    df['Fecha de Inicio del Viaje'] = pd.to_datetime(df['Fecha de Inicio del Viaje'], errors='coerce')
+    df['Fecha de Fin del Viaje'] = pd.to_datetime(df['Fecha de Fin del Viaje'], errors='coerce') 
+                </code>
+            </pre>  
+    
+            <pre>
+                <code class="language-dax">
+  
+    #Eliminamos registros sin Proveedor GPS
+    df = df.dropna(subset=['Proveedor GPS']) 
+
+    #Cambiamos los valores nulos con la mediana de la columna.
+    df['Kilómetros Mínimos a Cubrir por Día'] = df['Kilómetros Mínimos a Cubrir por Día'].fillna(df['Kilómetros Mínimos a Cubrir por Día'].median()) 
+
+    #Cambiamos los valores nulos con la moda de la columna.
+    df['ETA Real'] = df['ETA Real'].fillna(df['ETA Real'].mode()[0]) 
+    
+    #Cambiamos los valores nulos con la cadena 'Falta Información'
+    df['Tipo de Vehículo'] = df['Tipo de Vehículo'].fillna('Falta Información') 
+    
+    #Cambiamos los valores nulos con la cadena 'Falta Información'
+    df['Nombre del Conductor'] = df['Nombre del Conductor'].fillna('Falta Información') 
+    
+    #Cambiamos los valores nulos con la cadena 'Falta Información'
+    df['Número de Móvil del Conductor'] = df['Número de Móvil del Conductor'].fillna('Falta Información') 
+    
+                </code>
+            </pre>  
+
+            <pre>
+                <code class="language-dax">
+  
+    # Segunda verificación de valores nulos, NA y celdas vacías
+    null_values = df.isnull().sum()
+    na_values = df.isna().sum()
+    empty_values = (df == '').sum()
+    
+    # Mostrar el resumen de valores nulos, NA y celdas vacías
+    print("Valores nulos por columna:")
+    print(null_values)
+    print("\nValores NA por columna:")
+    print(na_values)
+    print("\nCeldas vacías por columna:")
+    print(empty_values)
+    
+                </code>
+            </pre> 
+            <pre>
+                <img src="IMG PROYECTO 1/df.isnull().sum() resultado.PNG" alt="df.isnull()">
+            </pre>
+
+            <pre>
+                <code class="language-dax">
+  
+    # Exportamos el DataFrame limpio a un archivo Excel
+    df.to_excel('db_Transportation_&_Logistics_Tracking.xlsx', index=False, sheet_name='Datos Limpios')
+    
+    print("Archivo exportado exitosamente como 'db_Transportation_&_Logistics_Tracking.xlsx'")
+    
+                </code>
+            </pre> 
 
 
       
